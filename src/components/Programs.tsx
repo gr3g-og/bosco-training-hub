@@ -8,51 +8,24 @@ import { Cpu, Wrench, Zap, Briefcase, Code, Cog } from "lucide-react";
 const programs = [
   {
     icon: Cpu,
-    title: "Computer Technology",
-    description: "Master modern computing skills including hardware, software, and networking.",
-    duration: "6-12 months",
-    level: "Beginner to Advanced",
+    title: "Basic Level Courses",
+    description: "Introductory courses for people looking to enter new fields.",
+    level: "Absolute Beginners",
+    color: "primary",
+  },
+  {
+    icon: Briefcase,
+    title: "Advanced Level",
+    description: "Advanced courses for students who need practical understanding of their fields.",
+    level: "Advance Career",
     color: "secondary",
   },
   {
     icon: Code,
-    title: "Software Development",
-    description: "Learn programming, web development, and application design from industry experts.",
-    duration: "8-12 months",
-    level: "Intermediate",
+    title: "Part-Time",
+    description: "Part-time courses for people who can't attend regular weekday classes.",
+    level: "Weekend Classes",
     color: "accent",
-  },
-  {
-    icon: Wrench,
-    title: "Technical Trades",
-    description: "Hands-on training in electrical, plumbing, welding, and mechanical trades.",
-    duration: "6-9 months",
-    level: "Beginner",
-    color: "primary",
-  },
-  {
-    icon: Zap,
-    title: "Electronics & Automation",
-    description: "Study modern electronics, automation systems, and industrial control.",
-    duration: "9-12 months",
-    level: "Intermediate",
-    color: "secondary",
-  },
-  {
-    icon: Cog,
-    title: "Mechanical Engineering",
-    description: "Practical mechanical skills including machine operation and maintenance.",
-    duration: "10-12 months",
-    level: "Beginner to Advanced",
-    color: "accent",
-  },
-  {
-    icon: Briefcase,
-    title: "Business & Management",
-    description: "Entrepreneurship, business administration, and professional development.",
-    duration: "6-8 months",
-    level: "All Levels",
-    color: "primary",
   },
 ];
 
@@ -100,9 +73,6 @@ export const Programs = () => {
                 <CardContent className="space-y-3">
                   <div className="flex items-center gap-2">
                     <Badge variant="secondary" className="font-normal">
-                      {program.duration}
-                    </Badge>
-                    <Badge variant="outline" className="font-normal">
                       {program.level}
                     </Badge>
                   </div>
