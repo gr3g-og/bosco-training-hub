@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Smile, BookOpen, Users2, Sparkles } from "lucide-react";
+import { Smile, BookOpen, Users2, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import studentLifeImage from "@/assets/student-life.jpg";
+import facilitiesImage from "@/assets/facilities.jpg";
+import heroImage from "@/assets/hero-image.jpg";
 
 const highlights = [
   {
@@ -28,9 +30,31 @@ const highlights = [
   },
 ];
 
+const galleryImages = [
+  { src: studentLifeImage, alt: "Students in training workshop" },
+  { src: facilitiesImage, alt: "Modern training facilities" },
+  { src: heroImage, alt: "Student gathering and activities" },
+];
+
 export const StudentLife = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
 
   return (
     <section id="student-life" className="py-24 bg-background" ref={ref}>
@@ -81,10 +105,55 @@ export const StudentLife = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="pt-4"
+              className="pt-4 space-y-4"
             >
-              <Button size="lg" variant="default" asChild>
-                <a href="#contact">Student Information</a>
+              {/* Gallery Slideshow */}
+              <div className="relative rounded-xl overflow-hidden shadow-medium h-64 bg-muted">
+                {galleryImages.map((image, index) => (
+                  <motion.img
+                    key={index}
+                    src={image.src}
+                    alt={image.alt}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: currentSlide === index ? 1 : 0 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                ))}
+                
+                {/* Navigation Buttons */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background text-foreground rounded-full p-2 transition-colors"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background text-foreground rounded-full p-2 transition-colors"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+
+                {/* Dots Indicator */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                  {galleryImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        currentSlide === index ? "bg-primary w-6" : "bg-background/60"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <Button size="lg" variant="default" asChild className="w-full sm:w-auto">
+                <a href="#contact">View More Photos</a>
               </Button>
             </motion.div>
           </motion.div>
