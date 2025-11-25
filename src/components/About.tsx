@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Target, Award, Users, TrendingUp } from "lucide-react";
-import facilitiesImage from "@/assets/facilities.jpg";
+import principalImage from "@/assets/principal.png";
 
 const features = [
   {
@@ -58,12 +58,17 @@ export const About = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-center"
           >
             <img
-              src={facilitiesImage}
-              alt="Modern technical training facilities at Don Bosco"
-              className="rounded-2xl shadow-medium w-full h-[400px] object-cover"
+              src={principalImage}
+              alt="Rev. Fr., Mark Eshun - Principal of Don Bosco Training Institute"
+              className="rounded-2xl shadow-medium w-full h-[400px] object-cover mb-4"
             />
+            <p className="text-xl font-display font-semibold text-foreground">
+              Rev. Fr., Mark Eshun
+            </p>
+            <p className="text-muted-foreground">Principal</p>
           </motion.div>
 
           <motion.div
