@@ -60,12 +60,14 @@ export const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center"
           >
-            <img
-              src={principalImage}
-              alt="Rev. Fr., Mark Eshun - Principal of Don Bosco Training Institute"
-              className="rounded-2xl shadow-medium w-full h-[400px] object-cover mb-4"
-            />
-            <p className="text-xl font-display font-semibold text-foreground">
+            <div className="relative inline-block p-1 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl">
+              <img
+                src={principalImage}
+                alt="Rev. Fr., Mark Eshun - Principal of Don Bosco Training Institute"
+                className="rounded-xl w-full h-[400px] object-cover border-4 border-background"
+              />
+            </div>
+            <p className="text-xl font-display font-semibold text-foreground mt-6">
               Rev. Fr., Mark Eshun
             </p>
             <p className="text-muted-foreground">Principal</p>
