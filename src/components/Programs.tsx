@@ -8,32 +8,6 @@ import { Cpu, Briefcase, Code } from "lucide-react";
 
 const programs = [
   {
-    icon: Code,
-    title: "Part-Time Courses",
-    description: "Part-time courses for people who can't attend regular weekday classes.",
-    level: "Weekend Classes",
-    color: "accent",
-    courses: [
-      {
-        category: "Electrical",
-        items: [
-          "Basic (Weekdays, Weekends)",
-          "Advance (Weekdays, Weekends)",
-          "Home & Building Automation",
-          "Industrial Installation",
-          "Automation PLC, HMI (Part I, Part II)"
-        ]
-      },
-      {
-        category: "Logistics & Warehousing",
-        items: [
-          "Forklift Operation (Weekend, Premium)",
-          "Crane Operation (Weekend, Premium)"
-        ]
-      }
-    ]
-  },
-  {
     icon: Cpu,
     title: "Basic Level",
     description: "Introductory courses for people looking to enter new fields.",
@@ -82,6 +56,32 @@ const programs = [
       {
         category: "Other",
         items: ["Solar", "Graphic Design", "Ref/Airconditioning (Industrial)"]
+      }
+    ]
+  },
+  {
+    icon: Code,
+    title: "Part-Time Courses",
+    description: "Part-time courses for people who can't attend regular weekday classes.",
+    level: "Weekend Classes",
+    color: "accent",
+    courses: [
+      {
+        category: "Electrical",
+        items: [
+          "Basic (Weekdays, Weekends)",
+          "Advance (Weekdays, Weekends)",
+          "Home & Building Automation",
+          "Industrial Installation",
+          "Automation PLC, HMI (Part I, Part II)"
+        ]
+      },
+      {
+        category: "Logistics & Warehousing",
+        items: [
+          "Forklift Operation (Weekend, Premium)",
+          "Crane Operation (Weekend, Premium)"
+        ]
       }
     ]
   }
