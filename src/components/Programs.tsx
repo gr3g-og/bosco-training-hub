@@ -3,30 +3,88 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Cpu, Wrench, Zap, Briefcase, Code, Cog } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Cpu, Briefcase, Code } from "lucide-react";
 
 const programs = [
   {
-    icon: Cpu,
-    title: "Basic Level Courses",
-    description: "Introductory courses for people looking to enter new fields.",
-    level: "Absolute Beginners",
-    color: "primary",
-  },
-  {
-    icon: Briefcase,
-    title: "Advanced Level",
-    description: "Advanced courses for students who need practical understanding of their fields.",
-    level: "Advance Career",
-    color: "secondary",
-  },
-  {
     icon: Code,
-    title: "Part-Time",
+    title: "Part-Time Courses",
     description: "Part-time courses for people who can't attend regular weekday classes.",
     level: "Weekend Classes",
     color: "accent",
+    courses: [
+      {
+        category: "Electrical",
+        items: [
+          "Basic (Weekdays, Weekends)",
+          "Advance (Weekdays, Weekends)",
+          "Home & Building Automation",
+          "Industrial Installation",
+          "Automation PLC, HMI (Part I, Part II)"
+        ]
+      },
+      {
+        category: "Logistics & Warehousing",
+        items: [
+          "Forklift Operation (Weekend, Premium)",
+          "Crane Operation (Weekend, Premium)"
+        ]
+      }
+    ]
   },
+  {
+    icon: Cpu,
+    title: "Basic Level",
+    description: "Introductory courses for people looking to enter new fields.",
+    level: "Absolute Beginners",
+    color: "primary",
+    courses: [
+      { category: "Automobile", items: [] },
+      { category: "Electrical", items: [] },
+      { category: "Hospitality", items: [] },
+      { category: "Refrigeration/Air Conditioning", items: [] },
+      { category: "Cosmetology", items: [] },
+      { category: "ICT (Microsoft Office)", items: [] }
+    ]
+  },
+  {
+    icon: Briefcase,
+    title: "Advance Level",
+    description: "Advanced courses for students who need practical understanding of their fields.",
+    level: "Advance Career",
+    color: "secondary",
+    courses: [
+      {
+        category: "Automobile",
+        items: ["Auto Mechanics", "Auto Air Conditioning", "Auto Electrical/Electronics"]
+      },
+      {
+        category: "Electrical",
+        items: ["Home & Building Automation", "Industrial Installation"]
+      },
+      {
+        category: "Logistics & Warehousing",
+        items: ["Forklift Operation (Regular)", "Crane Operation (Regular)"]
+      },
+      {
+        category: "Hospitality",
+        items: ["Front Office", "Food & Beverage", "Cooking & Baking", "House Keeping & Facility Mgt"]
+      },
+      {
+        category: "Driving (Car)",
+        items: ["Regular", "Weekends", "Polishing"]
+      },
+      {
+        category: "Cosmetology",
+        items: ["Hair Services", "Beauty Services"]
+      },
+      {
+        category: "Other",
+        items: ["Solar", "Graphic Design", "Ref/Airconditioning (Industrial)"]
+      }
+    ]
+  }
 ];
 
 export const Programs = () => {
@@ -71,11 +129,32 @@ export const Programs = () => {
                   <CardDescription className="text-base">{program.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 mb-4">
                     <Badge variant="secondary" className="font-normal">
                       {program.level}
                     </Badge>
                   </div>
+                  
+                  <Accordion type="single" collapsible className="w-full">
+                    {program.courses.map((course, courseIndex) => (
+                      <AccordionItem key={courseIndex} value={`course-${courseIndex}`} className="border-border/50">
+                        <AccordionTrigger className="text-sm font-medium hover:no-underline py-3">
+                          {course.category}
+                        </AccordionTrigger>
+                        {course.items.length > 0 && (
+                          <AccordionContent>
+                            <ul className="space-y-2 pl-4">
+                              {course.items.map((item, itemIndex) => (
+                                <li key={itemIndex} className="text-sm text-muted-foreground list-disc">
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        )}
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
                 </CardContent>
               </Card>
             </motion.div>
