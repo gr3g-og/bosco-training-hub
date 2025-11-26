@@ -135,26 +135,36 @@ export const Programs = () => {
                     </Badge>
                   </div>
                   
-                  <Accordion type="single" collapsible className="w-full">
-                    {program.courses.map((course, courseIndex) => (
-                      <AccordionItem key={courseIndex} value={`course-${courseIndex}`} className="border-border/50">
-                        <AccordionTrigger className="text-sm font-medium hover:no-underline py-3">
+                  {program.courses.every(course => course.items.length === 0) ? (
+                    <div className="flex flex-wrap gap-2">
+                      {program.courses.map((course, courseIndex) => (
+                        <Badge key={courseIndex} variant="outline" className="text-sm">
                           {course.category}
-                        </AccordionTrigger>
-                        {course.items.length > 0 && (
-                          <AccordionContent>
-                            <ul className="space-y-2 pl-4">
-                              {course.items.map((item, itemIndex) => (
-                                <li key={itemIndex} className="text-sm text-muted-foreground list-disc">
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </AccordionContent>
-                        )}
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
+                        </Badge>
+                      ))}
+                    </div>
+                  ) : (
+                    <Accordion type="single" collapsible className="w-full">
+                      {program.courses.map((course, courseIndex) => (
+                        <AccordionItem key={courseIndex} value={`course-${courseIndex}`} className="border-border/50">
+                          <AccordionTrigger className="text-sm font-medium hover:no-underline py-3">
+                            {course.category}
+                          </AccordionTrigger>
+                          {course.items.length > 0 && (
+                            <AccordionContent>
+                              <ul className="space-y-2 pl-4">
+                                {course.items.map((item, itemIndex) => (
+                                  <li key={itemIndex} className="text-sm text-muted-foreground list-disc">
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            </AccordionContent>
+                          )}
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
