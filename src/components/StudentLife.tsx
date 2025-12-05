@@ -3,9 +3,16 @@ import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Smile, BookOpen, Users2, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
-import studentLifeImage from "@/assets/student-life.jpg";
-import facilitiesImage from "@/assets/facilities.jpg";
-import heroImage from "@/assets/hero-image.jpg";
+import studentLife1 from "@/assets/student-life-1.avif";
+import studentLife2 from "@/assets/student-life-2.avif";
+import studentLife3 from "@/assets/student-life-3.avif";
+import studentLife4 from "@/assets/student-life-4.avif";
+import studentLife5 from "@/assets/student-life-5.avif";
+import studentLife6 from "@/assets/student-life-6.avif";
+import studentLife7 from "@/assets/student-life-7.avif";
+import studentLife8 from "@/assets/student-life-8.avif";
+import studentLife9 from "@/assets/student-life-9.avif";
+import studentLife10 from "@/assets/student-life-10.avif";
 
 const highlights = [
   {
@@ -31,9 +38,16 @@ const highlights = [
 ];
 
 const galleryImages = [
-  { src: studentLifeImage, alt: "Students in training workshop" },
-  { src: facilitiesImage, alt: "Modern training facilities" },
-  { src: heroImage, alt: "Student gathering and activities" },
+  { src: studentLife1, alt: "Student life at Don Bosco" },
+  { src: studentLife2, alt: "Students in training" },
+  { src: studentLife3, alt: "Campus activities" },
+  { src: studentLife4, alt: "Practical training session" },
+  { src: studentLife5, alt: "Student community" },
+  { src: studentLife6, alt: "Learning environment" },
+  { src: studentLife7, alt: "Hands-on training" },
+  { src: studentLife8, alt: "Student workshop" },
+  { src: studentLife9, alt: "Campus experience" },
+  { src: studentLife10, alt: "Student gathering" },
 ];
 
 export const StudentLife = () => {
