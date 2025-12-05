@@ -13,6 +13,16 @@ import studentLife7 from "@/assets/student-life-7.avif";
 import studentLife8 from "@/assets/student-life-8.avif";
 import studentLife9 from "@/assets/student-life-9.avif";
 import studentLife10 from "@/assets/student-life-10.avif";
+import studentLife11 from "@/assets/student-life-11.avif";
+import studentLife12 from "@/assets/student-life-12.avif";
+import studentLife13 from "@/assets/student-life-13.avif";
+import studentLife14 from "@/assets/student-life-14.avif";
+import studentLife15 from "@/assets/student-life-15.avif";
+import studentLife16 from "@/assets/student-life-16.avif";
+import studentLife17 from "@/assets/student-life-17.avif";
+import studentLife18 from "@/assets/student-life-18.avif";
+import studentLife19 from "@/assets/student-life-19.avif";
+import studentLife20 from "@/assets/student-life-20.avif";
 
 const highlights = [
   {
@@ -48,6 +58,16 @@ const galleryImages = [
   { src: studentLife8, alt: "Student workshop" },
   { src: studentLife9, alt: "Campus experience" },
   { src: studentLife10, alt: "Student gathering" },
+  { src: studentLife11, alt: "Campus life" },
+  { src: studentLife12, alt: "Student activities" },
+  { src: studentLife13, alt: "Training facilities" },
+  { src: studentLife14, alt: "Student events" },
+  { src: studentLife15, alt: "Learning moments" },
+  { src: studentLife16, alt: "Practical sessions" },
+  { src: studentLife17, alt: "Student collaboration" },
+  { src: studentLife18, alt: "Institute activities" },
+  { src: studentLife19, alt: "Campus moments" },
+  { src: studentLife20, alt: "Student experiences" },
 ];
 
 export const StudentLife = () => {
