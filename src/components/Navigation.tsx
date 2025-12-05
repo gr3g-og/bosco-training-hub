@@ -2,17 +2,20 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Student Life", href: "#student-life" },
-    { name: "Programs", href: "#programs" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: isHomePage ? "#home" : "/" },
+    { name: "About", href: isHomePage ? "#about" : "/#about" },
+    { name: "Student Life", href: isHomePage ? "#student-life" : "/#student-life" },
+    { name: "Programs", href: "/programs" },
+    { name: "Contact", href: isHomePage ? "#contact" : "/#contact" },
   ];
 
   return (
@@ -34,16 +37,32 @@ export const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="text-foreground hover:text-secondary transition-colors duration-300 font-medium"
-              >
-                {item.name}
-              </motion.a>
+              item.href.startsWith("/") && !item.href.includes("#") ? (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    to={item.href}
+                    className="text-foreground hover:text-secondary transition-colors duration-300 font-medium"
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ) : (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-foreground hover:text-secondary transition-colors duration-300 font-medium"
+                >
+                  {item.name}
+                </motion.a>
+              )
             ))}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -78,14 +97,25 @@ export const Navigation = () => {
             className="md:hidden pb-4"
           >
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block py-3 text-foreground hover:text-secondary transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </a>
+              item.href.startsWith("/") && !item.href.includes("#") ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="block py-3 text-foreground hover:text-secondary transition-colors duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block py-3 text-foreground hover:text-secondary transition-colors duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
             <Button variant="default" size="sm" className="w-full mt-4" asChild>
               <a href="#contact">Enroll Now</a>
