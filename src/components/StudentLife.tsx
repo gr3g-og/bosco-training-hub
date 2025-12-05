@@ -122,7 +122,7 @@ export const StudentLife = () => {
               className="pt-4 space-y-4"
             >
               {/* Gallery Slideshow */}
-              <div className="relative rounded-xl overflow-hidden shadow-medium h-64 bg-muted">
+              <div className="relative rounded-xl overflow-hidden shadow-medium h-80 md:h-96 bg-muted">
                 {galleryImages.map((image, index) => (
                   <motion.img
                     key={index}
