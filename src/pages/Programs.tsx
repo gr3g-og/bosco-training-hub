@@ -4,50 +4,60 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 
+import programAC from "@/assets/program-ac-refrigeration.jpg";
+import programAutomobile from "@/assets/program-automobile.jpg";
+import programCatering from "@/assets/program-catering.jpg";
+import programCosmetology from "@/assets/program-cosmetology.jpg";
+import programCrane from "@/assets/program-crane.jpg";
+import programDriving from "@/assets/program-driving.jpg";
+import programElectrical from "@/assets/program-electrical.jpg";
+import programForklift from "@/assets/program-forklift.jpg";
+import programIT from "@/assets/program-it-design.jpg";
+
 const programs = [
   {
     name: "Air Condition & Refrigeration",
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop",
+    image: programAC,
     slug: "air-condition-refrigeration"
   },
   {
     name: "Automobile",
-    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&h=600&fit=crop",
+    image: programAutomobile,
     slug: "automobile"
   },
   {
     name: "Catering & Hospitality",
-    image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=600&fit=crop",
+    image: programCatering,
     slug: "catering-hospitality"
   },
   {
     name: "Cosmetology (Beauty & Haircare)",
-    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop",
+    image: programCosmetology,
     slug: "cosmetology"
   },
   {
     name: "Crane Operation",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop",
+    image: programCrane,
     slug: "crane-operation"
   },
   {
     name: "Driving & Licensing",
-    image: "https://images.unsplash.com/photo-1449965408869-euj9de4c3da4?w=800&h=600&fit=crop",
+    image: programDriving,
     slug: "driving-licensing"
   },
   {
     name: "Electrical Installation & Solar",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=600&fit=crop",
+    image: programElectrical,
     slug: "electrical-solar"
   },
   {
     name: "ForkLift & Logistics",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop",
+    image: programForklift,
     slug: "forklift-logistics"
   },
   {
     name: "IT & Graphic Design",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+    image: programIT,
     slug: "it-graphic-design"
   }
 ];
