@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Smile, BookOpen, Users2, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Smile, BookOpen, Users2, Sparkles, ChevronLeft, ChevronRight, X } from "lucide-react";
 import studentLife1 from "@/assets/student-life-1.avif";
 import studentLife2 from "@/assets/student-life-2.avif";
 import studentLife3 from "@/assets/student-life-3.avif";
@@ -74,6 +75,8 @@ export const StudentLife = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -88,6 +91,19 @@ export const StudentLife = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  const openGallery = (index: number = 0) => {
+    setGalleryIndex(index);
+    setGalleryOpen(true);
+  };
+
+  const nextGalleryImage = () => {
+    setGalleryIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevGalleryImage = () => {
+    setGalleryIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
   return (
@@ -186,13 +202,78 @@ export const StudentLife = () => {
                 </div>
               </div>
 
-              <Button size="lg" variant="default" asChild className="w-full sm:w-auto">
-                <a href="#contact">View More Photos</a>
+              <Button size="lg" variant="default" onClick={() => openGallery(0)} className="w-full sm:w-auto">
+                View More Photos
               </Button>
             </motion.div>
           </motion.div>
         </div>
       </div>
+
+      {/* Gallery Dialog */}
+      <Dialog open={galleryOpen} onOpenChange={setGalleryOpen}>
+        <DialogContent className="max-w-5xl w-[95vw] h-[90vh] p-0 bg-background/95 backdrop-blur-sm border-border">
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Close Button */}
+            <button
+              onClick={() => setGalleryOpen(false)}
+              className="absolute top-4 right-4 z-50 bg-background/80 hover:bg-background text-foreground rounded-full p-2 transition-colors"
+              aria-label="Close gallery"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Image Counter */}
+            <div className="absolute top-4 left-4 z-50 bg-background/80 text-foreground px-3 py-1 rounded-full text-sm font-medium">
+              {galleryIndex + 1} / {galleryImages.length}
+            </div>
+
+            {/* Previous Button */}
+            <button
+              onClick={prevGalleryImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-background/80 hover:bg-background text-foreground rounded-full p-3 transition-colors"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Image */}
+            <motion.img
+              key={galleryIndex}
+              src={galleryImages[galleryIndex].src}
+              alt={galleryImages[galleryIndex].alt}
+              className="max-w-full max-h-[80vh] object-contain rounded-lg"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+            />
+
+            {/* Next Button */}
+            <button
+              onClick={nextGalleryImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-background/80 hover:bg-background text-foreground rounded-full p-3 transition-colors"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Thumbnail Strip */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 max-w-[80vw] overflow-x-auto px-4 py-2 bg-background/60 rounded-lg">
+              {galleryImages.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => setGalleryIndex(index)}
+                  className={`flex-shrink-0 w-12 h-12 rounded overflow-hidden transition-all ${
+                    galleryIndex === index ? "ring-2 ring-primary scale-110" : "opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
