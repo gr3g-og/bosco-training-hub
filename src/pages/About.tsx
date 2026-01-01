@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Target, Award, Users, TrendingUp, Heart, Lightbulb, Shield, Clock, GraduationCap, Building, Briefcase, Calendar } from "lucide-react";
+import { Target, Award, Users, TrendingUp, Heart, Lightbulb, Shield, GraduationCap, Building, Briefcase, Calendar, Globe, Sun, Wrench, HandHeart } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import principalImage from "@/assets/principal.png";
@@ -42,29 +42,52 @@ const stats = [
 
 const timeline = [
   {
-    year: "1998",
-    title: "Foundation",
-    description: "Don Bosco Training Institute was established in Ashaiman, Ghana, following the Salesian tradition of youth empowerment.",
+    year: "Foundation",
+    title: "Salesian Mission Begins",
+    description: "Established by the Salesians of Don Bosco in partnership with the Catholic Archdiocese of Accra, following St. John Bosco's mission to empower marginalized youth through skills training.",
   },
   {
-    year: "2005",
-    title: "Expansion",
-    description: "Added new programs including Electrical Installation and Automobile Technology to meet growing industry demands.",
+    year: "BINA",
+    title: "German Partnership",
+    description: "Launched the BINA Programme in partnership with the German Government, providing hands-on training and strengthening international collaboration for youth development.",
   },
   {
-    year: "2012",
-    title: "Modern Facilities",
-    description: "Upgraded to state-of-the-art training facilities with modern equipment and expanded workshops.",
+    year: "Solar",
+    title: "Solar Training Center",
+    description: "Established a regional Solar Training Center with German, Korean, and Samsung support, training trainers across West Africa including centers in Sunyani, Tatale, and Monrovia, Liberia.",
   },
   {
-    year: "2018",
-    title: "Digital Integration",
-    description: "Introduced IT & Computer Design programs and integrated digital learning tools across all courses.",
+    year: "2024",
+    title: "Ghana-Italy Partnership",
+    description: "Italian President Sergio Mattarella launched the 'Ghana Project' partnership with Confindustria Alto Adriatico and the Salesians, focusing on youth skills development.",
   },
   {
-    year: "2023",
-    title: "Continued Growth",
-    description: "Expanded Heavy Duty Equipment programs and strengthened industry partnerships for better job placements.",
+    year: "2025",
+    title: "Climate & TVET Leadership",
+    description: "Hosted JoyNews-German Embassy #ClimateTalks on green solutions (July) and TVET workshops on youth employment (Sept), reinforcing our role as a TVET leader in Ghana.",
+  },
+];
+
+const initiatives = [
+  {
+    icon: HandHeart,
+    title: "Women's Empowerment",
+    description: "Electronics and phone repair training for women to combat barriers like trafficking and promote economic independence.",
+  },
+  {
+    icon: Sun,
+    title: "Green Skills Training",
+    description: "Solar installation and sustainable technology programs preparing youth for the growing renewable energy sector.",
+  },
+  {
+    icon: Globe,
+    title: "Regional Impact",
+    description: "Training trainers across West Africa, extending our reach to Ghana, Liberia, and beyond through partner centers.",
+  },
+  {
+    icon: Wrench,
+    title: "NVTI Certification",
+    description: "Employment-oriented training leading to NVTI-compatible certifications recognized by employers nationwide.",
   },
 ];
 
@@ -104,14 +127,15 @@ const About = () => {
               className="text-center max-w-4xl mx-auto"
             >
               <span className="text-secondary font-display font-semibold text-lg mb-2 block">
-                About Don Bosco
+                Managed by the Salesians of Don Bosco
               </span>
               <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">
-                Empowering Youth Through Skills & Education
+                "Learn a Trade, Earn a Living"
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Following the Salesian tradition of St. John Bosco, we are committed to transforming 
-                young lives through quality vocational education and character formation.
+                A non-profit, Christian vocational training center in partnership with the Catholic 
+                Archdiocese of Accra, empowering marginalized and economically disadvantaged youth 
+                through market-oriented, employment-linked skills training since our founding.
               </p>
             </motion.div>
           </div>
@@ -127,14 +151,16 @@ const About = () => {
               className="text-center mb-16"
             >
               <span className="text-secondary font-display font-semibold text-lg mb-2 block">
-                Our Journey
+                Our Journey & Partnerships
               </span>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-                A Legacy of Excellence
+                Building Skills Across Generations
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                For over two decades, Don Bosco Training Institute has been at the forefront of 
-                vocational education in Ghana, shaping skilled professionals who drive our nation forward.
+                Established to address unemployment and skill gaps in Ghana, we combine hands-on practical 
+                education with moral and religious formation. Through international partnerships with Germany, 
+                Italy, Korea, and Samsung, we serve youth from Ghana and beyond, creating self-reliant 
+                skilled technicians, employees, and entrepreneurs.
               </p>
             </motion.div>
 
@@ -169,8 +195,51 @@ const About = () => {
           </div>
         </section>
 
+        {/* Special Initiatives Section */}
+        <section className="py-24 bg-gradient-subtle">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={historyInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <span className="text-secondary font-display font-semibold text-lg mb-2 block">
+                Special Initiatives
+              </span>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                Making a Difference
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Beyond traditional training, we lead specialized programs addressing critical needs 
+                in our community and across the region.
+              </p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {initiatives.map((initiative, index) => (
+                <motion.div
+                  key={initiative.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={historyInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                  className="bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-shadow duration-300"
+                >
+                  <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                    <initiative.icon className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h4 className="text-xl font-display font-semibold text-card-foreground mb-2">
+                    {initiative.title}
+                  </h4>
+                  <p className="text-muted-foreground">{initiative.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Mission & Vision Section */}
-        <section ref={missionRef} className="py-24 bg-gradient-subtle">
+        <section ref={missionRef} className="py-24 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <motion.div
@@ -184,9 +253,10 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-display font-bold text-card-foreground mb-4">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To provide ultra-modern, job-oriented skill training that equips young people with 
-                  the knowledge, competencies, and character needed to succeed in their chosen careers 
-                  and contribute positively to society.
+                  As part of the Salesians' broader work in Ghana—including Don Bosco Tech Sunyani and 
+                  schools in Tatale—we target economically disadvantaged youth amid challenges where 
+                  many live below the poverty line. We provide market-oriented, employment-linked 
+                  skills training combined with moral formation.
                 </p>
               </motion.div>
 
@@ -199,11 +269,12 @@ const About = () => {
                 <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
                   <TrendingUp className="w-8 h-8 text-secondary" />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-card-foreground mb-4">Our Vision</h3>
+                <h3 className="text-2xl font-display font-bold text-card-foreground mb-4">Our Impact</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be the leading vocational training institution in Ghana and beyond, recognized 
-                  for producing highly skilled, ethical, and innovative professionals who drive 
-                  economic growth and social development.
+                  Supported by German International Development Cooperation, Korea International 
+                  Cooperation Agency, and Salesian Missions worldwide, we've expanded facilities 
+                  including computer labs. Our TVET quality has been recognized by committee visits 
+                  (Oct 2024), and we continue promoting green skills and self-employment.
                 </p>
               </motion.div>
             </div>
