@@ -88,6 +88,15 @@ export const About = () => {
               With state-of-the-art facilities and a commitment to excellence, we prepare our
               students not just for jobs, but for successful careers that make a real impact.
             </p>
+            <a
+              href="/about"
+              className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 font-medium transition-colors duration-300"
+            >
+              Learn More About Us
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
           </motion.div>
         </div>
 
