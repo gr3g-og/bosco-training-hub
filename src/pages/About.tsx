@@ -131,23 +131,20 @@ const About = () => {
         {/* Hero Section */}
         <section ref={heroRef} className="pt-32 pb-16 bg-gradient-to-b from-primary/5 to-background">
           <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="text-center max-w-4xl mx-auto"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 30
+          }} animate={heroInView ? {
+            opacity: 1,
+            y: 0
+          } : {}} transition={{
+            duration: 0.6
+          }} className="text-center max-w-4xl mx-auto">
               <span className="text-secondary font-display font-semibold text-lg mb-4 block">
                 About Don Bosco Training Institute
               </span>
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">
-                Learn a Trade, Earn a Living
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                A non-profit, Christian vocational training center managed by the Salesians of Don Bosco 
-                in partnership with the Catholic Archdiocese of Accra. We focus on empowering marginalized 
-                and economically disadvantaged youth through market-oriented, employment-linked skills training.
-              </p>
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">Our School</h1>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">Don Bosco Training Institute, Ashaiman is a reputable non-profit vocational and technical training centre located in Tema Community 22, off Afariwa–Akosombo Road, Ashaiman, in the Greater Accra Region of Ghana. We are managed by the Salesians of Don Bosco in collaboration with the Catholic Archdiocese of Accra and guided by the educational philosophy of St. John Bosco — a patron of youth education and empowerment. Our institute was established to respond to the pressing needs of young people, especially those who are economically and socially marginalized. We provide job-oriented, market-relevant skill training that equips students with the practical and technical abilities they need to excel in today’s competitive job market and earn a decent living. </p>
             </motion.div>
           </div>
         </section>
