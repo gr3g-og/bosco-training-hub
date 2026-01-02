@@ -161,18 +161,10 @@ Our institute was established to respond to the pressing needs of young people, 
           } : {}} transition={{
             duration: 0.6
           }} className="text-center mb-16">
-              <span className="text-secondary font-display font-semibold text-lg mb-2 block">
-                Our Journey & Partnerships
-              </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-                Building Skills Across Generations
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Established to address unemployment and skill gaps in Ghana, we combine hands-on practical 
-                education with moral and religious formation. Through international partnerships with Germany, 
-                Italy, Korea, and Samsung, we serve youth from Ghana and beyond, creating self-reliant 
-                skilled technicians, employees, and entrepreneurs.
-              </p>
+              
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">Our Mission</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">To equip youth with employability and life management skills through practical, industry-aligned training that prepares them for meaningful careers, self-employment, and sustainable livelihoods. 
+ To be a leading technical and vocational training institution that bridges socio-economic gaps by empowering young people with the skills and confidence to succeed in the world of work and contribute positively to their communities.</p>
             </motion.div>
 
             <div className="relative">
