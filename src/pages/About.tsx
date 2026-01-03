@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Target, Award, Users, TrendingUp, Heart, Lightbulb, Shield, GraduationCap, Building, Briefcase, Calendar, Globe, Sun, Wrench, HandHeart } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
+import { Target, Award, Users, TrendingUp, Heart, Lightbulb, Shield, GraduationCap, Building, Briefcase, Calendar, Globe, Sun, Wrench, HandHeart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import principalImage from "@/assets/principal.png";
@@ -9,6 +9,11 @@ import facilitiesImage from "@/assets/facilities.jpg";
 import studentLife1 from "@/assets/student-life-1.avif";
 import studentLife2 from "@/assets/student-life-2.avif";
 import studentLife3 from "@/assets/student-life-3.avif";
+import campusAerial from "@/assets/campus-aerial.png";
+import studentLife4 from "@/assets/student-life-4.avif";
+import studentLife5 from "@/assets/student-life-5.avif";
+import programAutomobile from "@/assets/program-automobile.jpg";
+import programElectrical from "@/assets/program-electrical.jpg";
 const coreValues = [{
   icon: Award,
   title: "Excellence",
@@ -94,6 +99,32 @@ const facilities = [{
   image: studentLife3,
   title: "Student Activities"
 }];
+
+const campusImages = [{
+  image: campusAerial,
+  title: "Aerial View of Our Campus",
+  description: "A bird's eye view showcasing our expansive campus with solar panels and modern facilities"
+}, {
+  image: facilitiesImage,
+  title: "Modern Training Workshops",
+  description: "State-of-the-art workshops equipped with industry-standard tools and equipment"
+}, {
+  image: programAutomobile,
+  title: "Automobile Training Center",
+  description: "Hands-on vehicle maintenance and repair training facility"
+}, {
+  image: programElectrical,
+  title: "Electrical Installation Lab",
+  description: "Fully equipped electrical training laboratory"
+}, {
+  image: studentLife4,
+  title: "Student Activities",
+  description: "Vibrant campus life with diverse student engagement"
+}, {
+  image: studentLife5,
+  title: "Learning Environment",
+  description: "Conducive spaces for theoretical and practical learning"
+}];
 const About = () => {
   const heroRef = useRef(null);
   const historyRef = useRef(null);
@@ -101,6 +132,10 @@ const About = () => {
   const leadershipRef = useRef(null);
   const statsRef = useRef(null);
   const facilitiesRef = useRef(null);
+  const campusRef = useRef(null);
+  
+  const [currentCampusSlide, setCurrentCampusSlide] = useState(0);
+
   const heroInView = useInView(heroRef, {
     once: true,
     margin: "-100px"
@@ -125,6 +160,26 @@ const About = () => {
     once: true,
     margin: "-100px"
   });
+  const campusInView = useInView(campusRef, {
+    once: true,
+    margin: "-100px"
+  });
+
+  // Auto-advance carousel
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentCampusSlide((prev) => (prev + 1) % campusImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentCampusSlide((prev) => (prev + 1) % campusImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentCampusSlide((prev) => (prev - 1 + campusImages.length) % campusImages.length);
+  };
   return <div className="min-h-screen">
       <Navigation />
       <main>
@@ -471,6 +526,96 @@ const About = () => {
                   </div>
                 </motion.div>)}
             </div>
+          </div>
+        </section>
+
+        {/* Our Campus Carousel Section */}
+        <section ref={campusRef} className="py-24 bg-gradient-subtle">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={campusInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <span className="text-secondary font-display font-semibold text-lg mb-2 block">
+                Explore
+              </span>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                Our Campus
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Take a visual tour of our expansive campus, modern facilities, and vibrant learning environment.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={campusInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative max-w-5xl mx-auto"
+            >
+              {/* Main Carousel */}
+              <div className="relative overflow-hidden rounded-2xl shadow-medium">
+                <div className="relative h-[400px] md:h-[500px]">
+                  {campusImages.map((item, index) => (
+                    <div
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-700 ${
+                        index === currentCampusSlide ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                        <h3 className="text-2xl md:text-3xl font-display font-bold text-background mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-background/90 text-lg max-w-2xl">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft className="w-6 h-6 text-background" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
+                  aria-label="Next slide"
+                >
+                  <ChevronRight className="w-6 h-6 text-background" />
+                </button>
+              </div>
+
+              {/* Dot Indicators */}
+              <div className="flex justify-center gap-2 mt-6">
+                {campusImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentCampusSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentCampusSlide
+                        ? "bg-secondary w-8"
+                        : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
       </main>
