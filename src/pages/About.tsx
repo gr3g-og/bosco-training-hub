@@ -199,53 +199,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* History Section */}
-        <section ref={historyRef} className="bg-background py-24">
-          <div className="container mx-auto px-4">
-            <motion.div initial={{
-            opacity: 0,
-            y: 30
-          }} animate={historyInView ? {
-            opacity: 1,
-            y: 0
-          } : {}} transition={{
-            duration: 0.6
-          }} className="text-center mb-16">
-              
-              
-              
-            </motion.div>
-
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-secondary to-accent hidden md:block" />
-              
-              <div className="space-y-12">
-                {timeline.map((item, index) => <motion.div key={item.year} initial={{
-                opacity: 0,
-                x: index % 2 === 0 ? -30 : 30
-              }} animate={historyInView ? {
-                opacity: 1,
-                x: 0
-              } : {}} transition={{
-                duration: 0.5,
-                delay: index * 0.1
-              }} className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                    <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                      <div className="bg-card rounded-xl p-6 shadow-soft">
-                        <span className="text-secondary font-display font-bold text-2xl">{item.year}</span>
-                        <h3 className="text-xl font-display font-semibold text-card-foreground mt-2">{item.title}</h3>
-                        <p className="text-muted-foreground mt-2">{item.description}</p>
-                      </div>
-                    </div>
-                    <div className="w-4 h-4 bg-secondary rounded-full ring-4 ring-background z-10 hidden md:block" />
-                    <div className="flex-1 hidden md:block" />
-                  </motion.div>)}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Special Initiatives Section */}
         <section className="py-24 bg-gradient-subtle">
           <div className="container mx-auto px-4">
@@ -289,6 +242,53 @@ const About = () => {
                   </h4>
                   <p className="text-muted-foreground">{initiative.description}</p>
                 </motion.div>)}
+            </div>
+          </div>
+        </section>
+
+        {/* History Section */}
+        <section ref={historyRef} className="bg-background py-24">
+          <div className="container mx-auto px-4">
+            <motion.div initial={{
+            opacity: 0,
+            y: 30
+          }} animate={historyInView ? {
+            opacity: 1,
+            y: 0
+          } : {}} transition={{
+            duration: 0.6
+          }} className="text-center mb-16">
+              
+              
+              
+            </motion.div>
+
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-secondary to-accent hidden md:block" />
+              
+              <div className="space-y-12">
+                {timeline.map((item, index) => <motion.div key={item.year} initial={{
+                opacity: 0,
+                x: index % 2 === 0 ? -30 : 30
+              }} animate={historyInView ? {
+                opacity: 1,
+                x: 0
+              } : {}} transition={{
+                duration: 0.5,
+                delay: index * 0.1
+              }} className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
+                    <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
+                      <div className="bg-card rounded-xl p-6 shadow-soft">
+                        <span className="text-secondary font-display font-bold text-2xl">{item.year}</span>
+                        <h3 className="text-xl font-display font-semibold text-card-foreground mt-2">{item.title}</h3>
+                        <p className="text-muted-foreground mt-2">{item.description}</p>
+                      </div>
+                    </div>
+                    <div className="w-4 h-4 bg-secondary rounded-full ring-4 ring-background z-10 hidden md:block" />
+                    <div className="flex-1 hidden md:block" />
+                  </motion.div>)}
+              </div>
             </div>
           </div>
         </section>
