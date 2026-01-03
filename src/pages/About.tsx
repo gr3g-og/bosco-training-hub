@@ -233,9 +233,9 @@ const About = () => {
               delay: 0.2 + index * 0.1
             }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-shadow duration-300">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <initiative.icon className="w-6 h-6 text-destructive-foreground" />
+                    <initiative.icon className="w-6 h-6 text-[#c70000]" />
                   </div>
-                  <h4 className="text-xl font-display font-semibold mb-2 text-primary">
+                  <h4 className="text-xl font-display font-semibold mb-2 text-[#f09c00]">
                     {initiative.title}
                   </h4>
                   <p className="text-black">{initiative.description}</p>
