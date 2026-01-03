@@ -190,7 +190,7 @@ const About = () => {
           } : {}} transition={{
             duration: 0.6
           }} className="text-center max-w-4xl mx-auto">
-              <span className="font-display font-semibold text-lg mb-4 block text-destructive">
+              <span className="font-display font-semibold mb-4 block text-destructive text-2xl">
                 About Don Bosco Training Institute
               </span>
               <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">Our School</h1>
@@ -256,7 +256,7 @@ const About = () => {
           } : {}} transition={{
             duration: 0.6
           }} className="text-center mb-16">
-              <span className="font-display font-semibold mb-2 block text-3xl text-primary">
+              <span className="font-display font-semibold mb-2 block text-destructive text-3xl">
                 Special Initiatives
               </span>
             </motion.div>
