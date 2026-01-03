@@ -233,9 +233,9 @@ const About = () => {
               delay: 0.2 + index * 0.1
             }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-shadow duration-300">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <initiative.icon className="w-6 h-6 text-[#c70000]" />
+                    <initiative.icon className="w-6 h-6 text-[#a37a00]" />
                   </div>
-                  <h4 className="text-xl font-display font-semibold mb-2 text-[#f09c00]">
+                  <h4 className="text-xl font-display font-semibold mb-2 text-primary">
                     {initiative.title}
                   </h4>
                   <p className="text-black">{initiative.description}</p>
@@ -358,7 +358,7 @@ const About = () => {
                     <h3 className="text-2xl font-display font-bold text-card-foreground mb-2">
                       Rev. Fr., Mark Eshun
                     </h3>
-                    <p className="text-secondary font-medium mb-4">Principal</p>
+                    <p className="font-medium mb-4 text-xl text-primary">​PRINCIPAL</p>
                     <p className="text-muted-foreground leading-relaxed mb-4">
                       Under the leadership of Rev. Fr. Mark Eshun, Don Bosco Training Institute 
                       continues to uphold the Salesian tradition of education that focuses on the 
