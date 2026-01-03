@@ -99,7 +99,6 @@ const facilities = [{
   image: studentLife3,
   title: "Student Activities"
 }];
-
 const campusImages = [{
   image: campusAerial,
   title: "Aerial View of Our Campus",
@@ -133,9 +132,7 @@ const About = () => {
   const statsRef = useRef(null);
   const facilitiesRef = useRef(null);
   const campusRef = useRef(null);
-  
   const [currentCampusSlide, setCurrentCampusSlide] = useState(0);
-
   const heroInView = useInView(heroRef, {
     once: true,
     margin: "-100px"
@@ -168,17 +165,15 @@ const About = () => {
   // Auto-advance carousel
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentCampusSlide((prev) => (prev + 1) % campusImages.length);
+      setCurrentCampusSlide(prev => (prev + 1) % campusImages.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
-
   const nextSlide = () => {
-    setCurrentCampusSlide((prev) => (prev + 1) % campusImages.length);
+    setCurrentCampusSlide(prev => (prev + 1) % campusImages.length);
   };
-
   const prevSlide = () => {
-    setCurrentCampusSlide((prev) => (prev - 1 + campusImages.length) % campusImages.length);
+    setCurrentCampusSlide(prev => (prev - 1 + campusImages.length) % campusImages.length);
   };
   return <div className="min-h-screen">
       <Navigation />
@@ -303,26 +298,7 @@ const About = () => {
         <section ref={missionRef} className="py-24 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <motion.div initial={{
-              opacity: 0,
-              x: -30
-            }} animate={missionInView ? {
-              opacity: 1,
-              x: 0
-            } : {}} transition={{
-              duration: 0.6
-            }} className="bg-card rounded-2xl p-8 shadow-medium">
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Target className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-display font-bold text-card-foreground mb-4">Our Mission</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  As part of the Salesians' broader work in Ghana—including Don Bosco Tech Sunyani and 
-                  schools in Tatale—we target economically disadvantaged youth amid challenges where 
-                  many live below the poverty line. We provide market-oriented, employment-linked 
-                  skills training combined with moral formation.
-                </p>
-              </motion.div>
+              
 
               <motion.div initial={{
               opacity: 0,
@@ -485,59 +461,21 @@ const About = () => {
 
         {/* Facilities Section */}
         <section ref={facilitiesRef} className="py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <motion.div initial={{
-            opacity: 0,
-            y: 30
-          }} animate={facilitiesInView ? {
-            opacity: 1,
-            y: 0
-          } : {}} transition={{
-            duration: 0.6
-          }} className="text-center mb-16">
-              <span className="text-secondary font-display font-semibold text-lg mb-2 block">
-                Our Facilities
-              </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-                State-of-the-Art Learning Environment
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Our modern facilities provide students with hands-on experience using industry-standard 
-                equipment and technology.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {facilities.map((facility, index) => <motion.div key={facility.title} initial={{
-              opacity: 0,
-              y: 30
-            }} animate={facilitiesInView ? {
-              opacity: 1,
-              y: 0
-            } : {}} transition={{
-              duration: 0.5,
-              delay: index * 0.1
-            }} className="group relative overflow-hidden rounded-xl">
-                  <img src={facility.image} alt={facility.title} className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent flex items-end p-6">
-                    <h3 className="text-background font-display font-semibold text-lg">
-                      {facility.title}
-                    </h3>
-                  </div>
-                </motion.div>)}
-            </div>
-          </div>
+          
         </section>
 
         {/* Our Campus Carousel Section */}
         <section ref={campusRef} className="py-24 bg-gradient-subtle">
           <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={campusInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 30
+          }} animate={campusInView ? {
+            opacity: 1,
+            y: 0
+          } : {}} transition={{
+            duration: 0.6
+          }} className="text-center mb-12">
               <span className="text-secondary font-display font-semibold text-lg mb-2 block">
                 Explore
               </span>
@@ -549,27 +487,21 @@ const About = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={campusInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative max-w-5xl mx-auto"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 30
+          }} animate={campusInView ? {
+            opacity: 1,
+            y: 0
+          } : {}} transition={{
+            duration: 0.6,
+            delay: 0.2
+          }} className="relative max-w-5xl mx-auto">
               {/* Main Carousel */}
               <div className="relative overflow-hidden rounded-2xl shadow-medium">
                 <div className="relative h-[400px] md:h-[500px]">
-                  {campusImages.map((item, index) => (
-                    <div
-                      key={index}
-                      className={`absolute inset-0 transition-opacity duration-700 ${
-                        index === currentCampusSlide ? "opacity-100" : "opacity-0"
-                      }`}
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover"
-                      />
+                  {campusImages.map((item, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-700 ${index === currentCampusSlide ? "opacity-100" : "opacity-0"}`}>
+                      <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
                         <h3 className="text-2xl md:text-3xl font-display font-bold text-background mb-2">
@@ -579,41 +511,21 @@ const About = () => {
                           {item.description}
                         </p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
 
                 {/* Navigation Arrows */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
-                  aria-label="Previous slide"
-                >
+                <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors" aria-label="Previous slide">
                   <ChevronLeft className="w-6 h-6 text-background" />
                 </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
-                  aria-label="Next slide"
-                >
+                <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/20 hover:bg-background/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors" aria-label="Next slide">
                   <ChevronRight className="w-6 h-6 text-background" />
                 </button>
               </div>
 
               {/* Dot Indicators */}
               <div className="flex justify-center gap-2 mt-6">
-                {campusImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentCampusSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentCampusSlide
-                        ? "bg-secondary w-8"
-                        : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
+                {campusImages.map((_, index) => <button key={index} onClick={() => setCurrentCampusSlide(index)} className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentCampusSlide ? "bg-secondary w-8" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"}`} aria-label={`Go to slide ${index + 1}`} />)}
               </div>
             </motion.div>
           </div>
