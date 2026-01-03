@@ -193,7 +193,7 @@ const About = () => {
               <span className="font-display font-semibold mb-4 block text-destructive text-2xl">
                 About Don Bosco Training Institute
               </span>
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">Our School</h1>
+              <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-black">Our School</h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">Don Bosco Training Institute, Ashaiman is a reputable non-profit vocational and technical training centre located in Tema Community 22, off Afariwa–Akosombo Road, Ashaiman, in the Greater Accra Region of Ghana. We are managed by the Salesians of Don Bosco in collaboration with the Catholic Archdiocese of Accra and guided by the educational philosophy of St. John Bosco — a patron of youth education and empowerment. Our institute was established to respond to the pressing needs of young people, especially those who are economically and socially marginalized. We provide job-oriented, market-relevant skill training that equips students with the practical and technical abilities they need to excel in today’s competitive job market and earn a decent living. </p>
             </motion.div>
           </div>
