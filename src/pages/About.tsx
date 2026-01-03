@@ -190,7 +190,7 @@ const About = () => {
           } : {}} transition={{
             duration: 0.6
           }} className="text-center max-w-4xl mx-auto">
-              <span className="text-secondary font-display font-semibold text-lg mb-4 block">
+              <span className="font-display font-semibold text-lg mb-4 block text-destructive">
                 About Don Bosco Training Institute
               </span>
               <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6">Our School</h1>
@@ -233,7 +233,7 @@ const About = () => {
               delay: 0.2 + index * 0.1
             }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-shadow duration-300">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                    <initiative.icon className="w-6 h-6 text-secondary" />
+                    <initiative.icon className="w-6 h-6 text-destructive-foreground" />
                   </div>
                   <h4 className="text-xl font-display font-semibold text-card-foreground mb-2">
                     {initiative.title}
@@ -329,7 +329,7 @@ const About = () => {
           } : {}} transition={{
             duration: 0.6
           }} className="text-center mb-16">
-              <span className="text-secondary font-display font-semibold text-lg mb-2 block">
+              <span className="font-display font-semibold mb-2 block text-destructive text-3xl">
                 Leadership
               </span>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
@@ -434,15 +434,11 @@ const About = () => {
           } : {}} transition={{
             duration: 0.6
           }} className="text-center mb-12">
-              <span className="text-secondary font-display font-semibold text-lg mb-2 block">
-                Explore
-              </span>
+              
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
                 Our Campus
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Take a visual tour of our expansive campus, modern facilities, and vibrant learning environment.
-              </p>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">Take a visual tour of our expansive campus and vibrant learning environment.</p>
             </motion.div>
 
             <motion.div initial={{
