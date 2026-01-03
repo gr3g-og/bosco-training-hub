@@ -215,7 +215,7 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
                 Making a Difference
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg max-w-3xl mx-auto text-black">
                 Beyond traditional training, we lead specialized programs addressing critical needs 
                 in our community and across the region.
               </p>
@@ -235,10 +235,10 @@ const About = () => {
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
                     <initiative.icon className="w-6 h-6 text-destructive-foreground" />
                   </div>
-                  <h4 className="text-xl font-display font-semibold text-card-foreground mb-2">
+                  <h4 className="text-xl font-display font-semibold mb-2 text-primary">
                     {initiative.title}
                   </h4>
-                  <p className="text-muted-foreground">{initiative.description}</p>
+                  <p className="text-black">{initiative.description}</p>
                 </motion.div>)}
             </div>
           </div>
