@@ -300,27 +300,7 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               
 
-              <motion.div initial={{
-              opacity: 0,
-              x: 30
-            }} animate={missionInView ? {
-              opacity: 1,
-              x: 0
-            } : {}} transition={{
-              duration: 0.6,
-              delay: 0.1
-            }} className="bg-card rounded-2xl p-8 shadow-medium">
-                <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
-                  <TrendingUp className="w-8 h-8 text-secondary" />
-                </div>
-                <h3 className="text-2xl font-display font-bold text-card-foreground mb-4">Our Impact</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Supported by German International Development Cooperation, Korea International 
-                  Cooperation Agency, and Salesian Missions worldwide, we've expanded facilities 
-                  including computer labs. Our TVET quality has been recognized by committee visits 
-                  (Oct 2024), and we continue promoting green skills and self-employment.
-                </p>
-              </motion.div>
+              
             </div>
 
             <motion.div initial={{
@@ -333,29 +313,10 @@ const About = () => {
             duration: 0.6,
             delay: 0.2
           }} className="text-center mb-12">
-              <h3 className="text-3xl font-display font-bold text-foreground mb-4">Our Core Values</h3>
+              
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {coreValues.map((value, index) => <motion.div key={value.title} initial={{
-              opacity: 0,
-              y: 30
-            }} animate={missionInView ? {
-              opacity: 1,
-              y: 0
-            } : {}} transition={{
-              duration: 0.5,
-              delay: 0.3 + index * 0.1
-            }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-shadow duration-300 text-center">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                    <value.icon className="w-6 h-6 text-accent" />
-                  </div>
-                  <h4 className="text-xl font-display font-semibold text-card-foreground mb-2">
-                    {value.title}
-                  </h4>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </motion.div>)}
-            </div>
+            
           </div>
         </section>
 
