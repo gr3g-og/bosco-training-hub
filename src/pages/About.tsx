@@ -211,9 +211,7 @@ const About = () => {
           } : {}} transition={{
             duration: 0.6
           }} className="text-center mb-16">
-              <span className="text-secondary font-display font-semibold text-lg mb-2 block">
-                Special Initiatives
-              </span>
+              
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
                 Making a Difference
               </h2>
@@ -258,9 +256,9 @@ const About = () => {
           } : {}} transition={{
             duration: 0.6
           }} className="text-center mb-16">
-              
-              
-              
+              <span className="text-secondary font-display font-semibold text-lg mb-2 block">
+                Special Initiatives
+              </span>
             </motion.div>
 
             <div className="relative">
