@@ -256,7 +256,7 @@ const About = () => {
           } : {}} transition={{
             duration: 0.6
           }} className="text-center mb-16">
-              <span className="text-secondary font-display font-semibold text-lg mb-2 block">
+              <span className="font-display font-semibold mb-2 block text-3xl text-primary">
                 Special Initiatives
               </span>
             </motion.div>
