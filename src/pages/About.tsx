@@ -359,12 +359,12 @@ const About = () => {
                       Rev. Fr., Mark Eshun
                     </h3>
                     <p className="font-medium mb-4 text-xl text-primary">​PRINCIPAL</p>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
+                    <p className="leading-relaxed mb-4 text-black">
                       Under the leadership of Rev. Fr. Mark Eshun, Don Bosco Training Institute 
                       continues to uphold the Salesian tradition of education that focuses on the 
                       holistic development of young people.
                     </p>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="leading-relaxed text-black">
                       His dedication to excellence in vocational training and commitment to the 
                       welfare of students has helped shape the institution into a beacon of hope 
                       for youth seeking quality skill development.
