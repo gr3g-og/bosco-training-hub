@@ -212,9 +212,8 @@ const About = () => {
             duration: 0.6
           }} className="text-center mb-16">
               
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">Our Mission</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">To equip youth with employability and life management skills through practical, industry-aligned training that prepares them for meaningful careers, self-employment, and sustainable livelihoods. 
- To be a leading technical and vocational training institution that bridges socio-economic gaps by empowering young people with the skills and confidence to succeed in the world of work and contribute positively to their communities.</p>
+              
+              
             </motion.div>
 
             <div className="relative">
