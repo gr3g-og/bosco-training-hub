@@ -278,7 +278,7 @@ const About = () => {
               }} className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                     <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
                       <div className="bg-card rounded-xl p-6 shadow-soft">
-                        <span className="text-secondary font-display font-bold text-2xl">{item.year}</span>
+                        <span className="font-display font-bold text-2xl text-[#fd6f44]">{item.year}</span>
                         <h3 className="text-xl font-display font-semibold text-card-foreground mt-2">{item.title}</h3>
                         <p className="text-muted-foreground mt-2">{item.description}</p>
                       </div>
@@ -438,7 +438,7 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
                 Our Campus
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">Take a visual tour of our expansive campus and vibrant learning environment.</p>
+              <p className="text-lg max-w-3xl mx-auto text-black">Take a visual tour of our expansive campus and vibrant learning environment.</p>
             </motion.div>
 
             <motion.div initial={{
