@@ -15,6 +15,7 @@ import studentLife5 from "@/assets/student-life-5.avif";
 import programAutomobile from "@/assets/program-automobile.jpg";
 import programElectrical from "@/assets/program-electrical.jpg";
 import campusView2 from "@/assets/campus-view-2.png";
+import administratorImage from "@/assets/administrator.avif";
 const coreValues = [{
   icon: Award,
   title: "Excellence",
@@ -351,42 +352,63 @@ const About = () => {
               </h2>
             </motion.div>
 
-            <motion.div initial={{
-            opacity: 0,
-            y: 30
-          }} animate={leadershipInView ? {
-            opacity: 1,
-            y: 0
-          } : {}} transition={{
-            duration: 0.6,
-            delay: 0.2
-          }} className="max-w-4xl mx-auto">
-              <div className="bg-card rounded-2xl p-8 md:p-12 shadow-medium">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <motion.div initial={{
+              opacity: 0,
+              y: 30
+            }} animate={leadershipInView ? {
+              opacity: 1,
+              y: 0
+            } : {}} transition={{
+              duration: 0.6,
+              delay: 0.2
+            }}>
+                <div className="bg-card rounded-2xl p-8 shadow-medium h-full">
                   <div className="text-center">
-                    <div className="relative inline-block p-1 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl">
-                      <img src={principalImage} alt="Rev. Fr., Mark Eshun - Principal of Don Bosco Training Institute" className="rounded-xl w-full h-[350px] object-cover border-4 border-background" />
+                    <div className="relative inline-block p-1 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl mb-6">
+                      <img src={principalImage} alt="Rev. Fr., Mark Eshun - Principal of Don Bosco Training Institute" className="rounded-xl w-full h-[300px] object-cover border-4 border-background" />
                     </div>
-                  </div>
-                  <div>
                     <h3 className="text-2xl font-display font-bold text-card-foreground mb-2">
-                      Rev. Fr., Mark Eshun
+                      Rev. Fr. Mark Eshun
                     </h3>
-                    <p className="font-medium mb-4 text-xl text-primary">​PRINCIPAL</p>
-                    <p className="leading-relaxed mb-4 text-black">
+                    <p className="font-medium mb-4 text-xl text-primary">PRINCIPAL</p>
+                    <p className="leading-relaxed text-black">
                       Under the leadership of Rev. Fr. Mark Eshun, Don Bosco Training Institute 
                       continues to uphold the Salesian tradition of education that focuses on the 
                       holistic development of young people.
                     </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div initial={{
+              opacity: 0,
+              y: 30
+            }} animate={leadershipInView ? {
+              opacity: 1,
+              y: 0
+            } : {}} transition={{
+              duration: 0.6,
+              delay: 0.4
+            }}>
+                <div className="bg-card rounded-2xl p-8 shadow-medium h-full">
+                  <div className="text-center">
+                    <div className="relative inline-block p-1 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl mb-6">
+                      <img src={administratorImage} alt="Rev. Fr. Peter Nghia Nguyen Trong - Administrator of Don Bosco Training Institute" className="rounded-xl w-full h-[300px] object-cover border-4 border-background" />
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-card-foreground mb-2">
+                      Rev. Fr. Peter Nghia Nguyen Trong
+                    </h3>
+                    <p className="font-medium mb-4 text-xl text-primary">ADMINISTRATOR</p>
                     <p className="leading-relaxed text-black">
-                      His dedication to excellence in vocational training and commitment to the 
-                      welfare of students has helped shape the institution into a beacon of hope 
-                      for youth seeking quality skill development.
+                      Rev. Fr. Peter Nghia Nguyen Trong serves as the Administrator, ensuring the 
+                      smooth operation of the institute and supporting the mission to provide 
+                      quality vocational training to youth.
                     </p>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
