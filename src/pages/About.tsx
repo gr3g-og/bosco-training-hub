@@ -199,17 +199,17 @@ const About = () => {
               <p className="text-lg md:text-xl leading-relaxed text-black">Don Bosco Training Institute, Ashaiman is a reputable non-profit vocational and technical training centre located in Tema Community 22, off Afariwa–Akosombo Road, Ashaiman, in the Greater Accra Region of Ghana. We are managed by the Salesians of Don Bosco in collaboration with the Catholic Archdiocese of Accra and guided by the educational philosophy of St. John Bosco — a patron of youth education and empowerment. Our institute was established to respond to the pressing needs of young people, especially those who are economically and socially marginalized. We provide job-oriented, market-relevant skill training that equips students with the practical and technical abilities they need to excel in today’s competitive job market and earn a decent living. </p>
             </motion.div>
             
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-12"
-            >
-              <img 
-                src={campusView2} 
-                alt="Aerial view of Don Bosco Training Institute campus" 
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
+            <motion.div initial={{
+            opacity: 0,
+            y: 30
+          }} animate={heroInView ? {
+            opacity: 1,
+            y: 0
+          } : {}} transition={{
+            duration: 0.6,
+            delay: 0.2
+          }} className="mt-12">
+              <img src={campusView2} alt="Aerial view of Don Bosco Training Institute campus" className="w-full h-auto rounded-lg shadow-lg" />
             </motion.div>
           </div>
         </section>
@@ -326,7 +326,7 @@ const About = () => {
             } : {}} transition={{
               duration: 0.5,
               delay: 0.2 + index * 0.1
-            }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-lg hover:shadow-primary/20 border border-transparent hover:border-primary/30 transition-all duration-300">
+            }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-lg hover:shadow-primary/20 border-transparent hover:border-primary/30 transition-all duration-300 border-2">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
                     <initiative.icon className="w-6 h-6 text-[#a37a00]" />
                   </div>
