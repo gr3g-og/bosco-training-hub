@@ -9,13 +9,22 @@ import facilitiesImage from "@/assets/facilities.jpg";
 import studentLife1 from "@/assets/student-life-1.avif";
 import studentLife2 from "@/assets/student-life-2.avif";
 import studentLife3 from "@/assets/student-life-3.avif";
-import campusAerial from "@/assets/campus-aerial.png";
 import studentLife4 from "@/assets/student-life-4.avif";
 import studentLife5 from "@/assets/student-life-5.avif";
 import programAutomobile from "@/assets/program-automobile.jpg";
 import programElectrical from "@/assets/program-electrical.jpg";
 import campusView2 from "@/assets/campus-view-2.png";
 import administratorImage from "@/assets/administrator.avif";
+import campus1 from "@/assets/campus-1.avif";
+import campus2 from "@/assets/campus-2.avif";
+import campus3 from "@/assets/campus-3.avif";
+import campus4 from "@/assets/campus-4.avif";
+import campus5 from "@/assets/campus-5.avif";
+import campus6 from "@/assets/campus-6.avif";
+import campus7 from "@/assets/campus-7.avif";
+import campus8 from "@/assets/campus-8.avif";
+import campus9 from "@/assets/campus-9.avif";
+import campus10 from "@/assets/campus-10.avif";
 const coreValues = [{
   icon: Award,
   title: "Excellence",
@@ -102,29 +111,45 @@ const facilities = [{
   title: "Student Activities"
 }];
 const campusImages = [{
-  image: campusAerial,
-  title: "Aerial View of Our Campus",
-  description: "A bird's eye view showcasing our expansive campus with solar panels and modern facilities"
+  image: campus1,
+  title: "Campus Entrance",
+  description: "Welcome to Don Bosco Technical Institute"
 }, {
-  image: facilitiesImage,
-  title: "Modern Training Workshops",
-  description: "State-of-the-art workshops equipped with industry-standard tools and equipment"
+  image: campus2,
+  title: "Modern Facilities",
+  description: "State-of-the-art training facilities for hands-on learning"
 }, {
-  image: programAutomobile,
-  title: "Automobile Training Center",
-  description: "Hands-on vehicle maintenance and repair training facility"
-}, {
-  image: programElectrical,
-  title: "Electrical Installation Lab",
-  description: "Fully equipped electrical training laboratory"
-}, {
-  image: studentLife4,
-  title: "Student Activities",
-  description: "Vibrant campus life with diverse student engagement"
-}, {
-  image: studentLife5,
+  image: campus3,
   title: "Learning Environment",
-  description: "Conducive spaces for theoretical and practical learning"
+  description: "Conducive spaces designed for practical skills development"
+}, {
+  image: campus4,
+  title: "Technical Workshops",
+  description: "Well-equipped workshops with industry-standard tools"
+}, {
+  image: campus5,
+  title: "Student Activities",
+  description: "Vibrant campus life fostering holistic development"
+}, {
+  image: campus6,
+  title: "Training Center",
+  description: "Dedicated spaces for specialized vocational training"
+}, {
+  image: campus7,
+  title: "Campus Grounds",
+  description: "Beautiful green spaces for recreation and community"
+}, {
+  image: campus8,
+  title: "Skills Development",
+  description: "Hands-on training in real-world environments"
+}, {
+  image: campus9,
+  title: "Innovation Hub",
+  description: "Modern technology and equipment for future-ready skills"
+}, {
+  image: campus10,
+  title: "Community Space",
+  description: "Gathering areas that bring students together"
 }];
 const About = () => {
   const heroRef = useRef(null);
