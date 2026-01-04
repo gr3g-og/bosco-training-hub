@@ -326,7 +326,7 @@ const About = () => {
             } : {}} transition={{
               duration: 0.5,
               delay: 0.2 + index * 0.1
-            }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-shadow duration-300">
+            }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-lg hover:shadow-primary/20 border border-transparent hover:border-primary/30 transition-all duration-300">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
                     <initiative.icon className="w-6 h-6 text-[#a37a00]" />
                   </div>
