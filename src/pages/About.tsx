@@ -214,6 +214,86 @@ const About = () => {
           </div>
         </section>
 
+        {/* Leadership Section */}
+        <section ref={leadershipRef} className="py-24 bg-background">
+          <div className="container mx-auto px-4">
+            <motion.div initial={{
+            opacity: 0,
+            y: 30
+          }} animate={leadershipInView ? {
+            opacity: 1,
+            y: 0
+          } : {}} transition={{
+            duration: 0.6
+          }} className="text-center mb-16">
+              <span className="font-display font-semibold mb-2 block text-destructive text-3xl">
+                Leadership
+              </span>
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                Guided by Experience
+              </h2>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <motion.div initial={{
+              opacity: 0,
+              y: 30
+            }} animate={leadershipInView ? {
+              opacity: 1,
+              y: 0
+            } : {}} transition={{
+              duration: 0.6,
+              delay: 0.2
+            }}>
+                <div className="bg-card rounded-2xl p-8 shadow-medium h-full">
+                  <div className="text-center">
+                    <div className="relative inline-block p-1 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl mb-6">
+                      <img src={principalImage} alt="Rev. Fr., Mark Eshun - Principal of Don Bosco Training Institute" className="rounded-xl w-full h-[300px] object-cover border-4 border-background" />
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-card-foreground mb-2">
+                      Rev. Fr. Mark Eshun
+                    </h3>
+                    <p className="font-medium mb-4 text-xl text-primary">PRINCIPAL</p>
+                    <p className="leading-relaxed text-black">
+                      Under the leadership of Rev. Fr. Mark Eshun, Don Bosco Training Institute 
+                      continues to uphold the Salesian tradition of education that focuses on the 
+                      holistic development of young people.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div initial={{
+              opacity: 0,
+              y: 30
+            }} animate={leadershipInView ? {
+              opacity: 1,
+              y: 0
+            } : {}} transition={{
+              duration: 0.6,
+              delay: 0.4
+            }}>
+                <div className="bg-card rounded-2xl p-8 shadow-medium h-full">
+                  <div className="text-center">
+                    <div className="relative inline-block p-1 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl mb-6">
+                      <img src={administratorImage} alt="Rev. Fr. Peter Nghia Nguyen Trong - Administrator of Don Bosco Training Institute" className="rounded-xl w-full h-[300px] object-cover border-4 border-background" />
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-card-foreground mb-2">
+                      Rev. Fr. Peter Nghia Nguyen Trong
+                    </h3>
+                    <p className="font-medium mb-4 text-xl text-primary">ADMINISTRATOR</p>
+                    <p className="leading-relaxed text-black">
+                      Rev. Fr. Peter Nghia Nguyen Trong serves as the Administrator, ensuring the 
+                      smooth operation of the institute and supporting the mission to provide 
+                      quality vocational training to youth.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Special Initiatives Section */}
         <section className="py-24 bg-gradient-subtle">
           <div className="container mx-auto px-4">
@@ -329,86 +409,6 @@ const About = () => {
             </motion.div>
 
             
-          </div>
-        </section>
-
-        {/* Leadership Section */}
-        <section ref={leadershipRef} className="py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <motion.div initial={{
-            opacity: 0,
-            y: 30
-          }} animate={leadershipInView ? {
-            opacity: 1,
-            y: 0
-          } : {}} transition={{
-            duration: 0.6
-          }} className="text-center mb-16">
-              <span className="font-display font-semibold mb-2 block text-destructive text-3xl">
-                Leadership
-              </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-                Guided by Experience
-              </h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              <motion.div initial={{
-              opacity: 0,
-              y: 30
-            }} animate={leadershipInView ? {
-              opacity: 1,
-              y: 0
-            } : {}} transition={{
-              duration: 0.6,
-              delay: 0.2
-            }}>
-                <div className="bg-card rounded-2xl p-8 shadow-medium h-full">
-                  <div className="text-center">
-                    <div className="relative inline-block p-1 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl mb-6">
-                      <img src={principalImage} alt="Rev. Fr., Mark Eshun - Principal of Don Bosco Training Institute" className="rounded-xl w-full h-[300px] object-cover border-4 border-background" />
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-card-foreground mb-2">
-                      Rev. Fr. Mark Eshun
-                    </h3>
-                    <p className="font-medium mb-4 text-xl text-primary">PRINCIPAL</p>
-                    <p className="leading-relaxed text-black">
-                      Under the leadership of Rev. Fr. Mark Eshun, Don Bosco Training Institute 
-                      continues to uphold the Salesian tradition of education that focuses on the 
-                      holistic development of young people.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div initial={{
-              opacity: 0,
-              y: 30
-            }} animate={leadershipInView ? {
-              opacity: 1,
-              y: 0
-            } : {}} transition={{
-              duration: 0.6,
-              delay: 0.4
-            }}>
-                <div className="bg-card rounded-2xl p-8 shadow-medium h-full">
-                  <div className="text-center">
-                    <div className="relative inline-block p-1 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl mb-6">
-                      <img src={administratorImage} alt="Rev. Fr. Peter Nghia Nguyen Trong - Administrator of Don Bosco Training Institute" className="rounded-xl w-full h-[300px] object-cover border-4 border-background" />
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-card-foreground mb-2">
-                      Rev. Fr. Peter Nghia Nguyen Trong
-                    </h3>
-                    <p className="font-medium mb-4 text-xl text-primary">ADMINISTRATOR</p>
-                    <p className="leading-relaxed text-black">
-                      Rev. Fr. Peter Nghia Nguyen Trong serves as the Administrator, ensuring the 
-                      smooth operation of the institute and supporting the mission to provide 
-                      quality vocational training to youth.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
           </div>
         </section>
 
