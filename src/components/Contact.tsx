@@ -6,48 +6,45 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: Phone,
-    title: "Phone",
-    details: "Contact us for enrollment",
-    link: "tel:+233",
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    details: "info@donboscoashaiman.com",
-    link: "mailto:info@donboscoashaiman.com",
-  },
-  {
-    icon: MapPin,
-    title: "Location",
-    details: "Ashaiman, Ghana",
-    link: "#",
-  },
-  {
-    icon: Clock,
-    title: "Office Hours",
-    details: "Mon - Fri: 8AM - 5PM",
-    link: "#",
-  },
-];
-
+const contactInfo = [{
+  icon: Phone,
+  title: "Phone",
+  details: "Contact us for enrollment",
+  link: "tel:+233"
+}, {
+  icon: Mail,
+  title: "Email",
+  details: "info@donboscoashaiman.com",
+  link: "mailto:info@donboscoashaiman.com"
+}, {
+  icon: MapPin,
+  title: "Location",
+  details: "Ashaiman, Ghana",
+  link: "#"
+}, {
+  icon: Clock,
+  title: "Office Hours",
+  details: "Mon - Fri: 8AM - 5PM",
+  link: "#"
+}];
 export const Contact = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <section id="contact" className="py-24 bg-gradient-subtle" ref={ref}>
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px"
+  });
+  return <section id="contact" className="py-24 bg-gradient-subtle" ref={ref}>
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="text-secondary font-display font-semibold text-lg mb-2 block">
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} animate={isInView ? {
+        opacity: 1,
+        y: 0
+      } : {}} transition={{
+        duration: 0.6
+      }} className="text-center mb-16">
+          <span className="font-display font-semibold mb-2 block text-destructive text-2xl">
             Open Enrollment
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
@@ -60,12 +57,16 @@ export const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: -30
+        }} animate={isInView ? {
+          opacity: 1,
+          x: 0
+        } : {}} transition={{
+          duration: 0.6,
+          delay: 0.2
+        }} className="space-y-6">
             <div>
               <h3 className="text-2xl font-display font-bold text-foreground mb-4">
                 Get in Touch
@@ -82,11 +83,7 @@ export const Contact = () => {
               </div>
               <Input type="email" placeholder="Email Address" className="bg-background" />
               <Input type="tel" placeholder="Phone Number" className="bg-background" />
-              <Textarea
-                placeholder="Tell us about your interest and which program you'd like to join..."
-                rows={5}
-                className="bg-background resize-none"
-              />
+              <Textarea placeholder="Tell us about your interest and which program you'd like to join..." rows={5} className="bg-background resize-none" />
               <Button size="lg" className="w-full">
                 Submit Application
               </Button>
@@ -97,12 +94,16 @@ export const Contact = () => {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-6"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: 30
+        }} animate={isInView ? {
+          opacity: 1,
+          x: 0
+        } : {}} transition={{
+          duration: 0.6,
+          delay: 0.3
+        }} className="space-y-6">
             <div>
               <h3 className="text-2xl font-display font-bold text-foreground mb-4">
                 Contact Information
@@ -113,13 +114,16 @@ export const Contact = () => {
             </div>
 
             <div className="space-y-4">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={info.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                >
+              {contactInfo.map((info, index) => <motion.div key={info.title} initial={{
+              opacity: 0,
+              y: 20
+            }} animate={isInView ? {
+              opacity: 1,
+              y: 0
+            } : {}} transition={{
+              duration: 0.5,
+              delay: 0.4 + index * 0.1
+            }}>
                   <Card className="hover:shadow-soft transition-shadow duration-300">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
@@ -130,18 +134,14 @@ export const Contact = () => {
                           <h4 className="font-display font-semibold text-foreground mb-1">
                             {info.title}
                           </h4>
-                          <a
-                            href={info.link}
-                            className="text-muted-foreground hover:text-secondary transition-colors"
-                          >
+                          <a href={info.link} className="text-muted-foreground hover:text-secondary transition-colors">
                             {info.details}
                           </a>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
 
             <Card className="bg-gradient-accent text-secondary-foreground border-0 shadow-accent">
@@ -152,11 +152,7 @@ export const Contact = () => {
                 <p className="mb-4">
                   Join our next intake and start building your future today.
                 </p>
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-background text-foreground hover:bg-background/90"
-                >
+                <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90">
                   View Available Programs
                 </Button>
               </CardContent>
@@ -164,6 +160,5 @@ export const Contact = () => {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
