@@ -58,9 +58,9 @@ export const About = () => {
         } : {}} transition={{
           duration: 0.5,
           delay: 0.4 + index * 0.1
-        }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-shadow duration-300">
+        }} className="bg-card rounded-xl p-6 shadow-soft hover:shadow-medium transition-shadow duration-300 border-primary">
               <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                <feature.icon className="w-6 h-6 text-secondary" />
+                <feature.icon className="w-6 h-6 text-red-600" />
               </div>
               <h3 className="text-xl font-display font-semibold text-card-foreground mb-2">
                 {feature.title}
