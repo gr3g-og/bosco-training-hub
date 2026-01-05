@@ -10,9 +10,9 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        <About />
+        <About className="bg-primary-glow" />
         <Programs />
-        <News className="bg-[#eccac0]" />
+        <News />
         <Contact />
       </main>
       <Footer />
