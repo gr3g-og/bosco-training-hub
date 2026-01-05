@@ -13,7 +13,7 @@ export const Navigation = () => {
   const navItems = [
     { name: "Home", href: isHomePage ? "#home" : "/" },
     { name: "About", href: "/about" },
-    { name: "Student Life", href: isHomePage ? "#student-life" : "/#student-life" },
+    { name: "Student Life", href: "/student-life" },
     { name: "Programs", href: "/programs" },
     { name: "Contact", href: isHomePage ? "#contact" : "/#contact" },
   ];
