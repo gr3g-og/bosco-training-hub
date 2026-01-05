@@ -46,53 +46,7 @@ export const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <motion.div initial={{
-          opacity: 0,
-          x: -30
-        }} animate={isInView ? {
-          opacity: 1,
-          x: 0
-        } : {}} transition={{
-          duration: 0.6,
-          delay: 0.2
-        }} className="text-center">
-            <div className="relative inline-block p-1 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl">
-              <img src={principalImage} alt="Rev. Fr., Mark Eshun - Principal of Don Bosco Training Institute" className="rounded-xl w-full h-[400px] object-cover border-4 border-background" />
-            </div>
-            <p className="text-xl font-display font-semibold text-foreground mt-6">
-              Rev. Fr., Mark Eshun
-            </p>
-            <p className="text-muted-foreground">Principal</p>
-          </motion.div>
-
-          <motion.div initial={{
-          opacity: 0,
-          x: 30
-        }} animate={isInView ? {
-          opacity: 1,
-          x: 0
-        } : {}} transition={{
-          duration: 0.6,
-          delay: 0.3
-        }} className="space-y-6">
-            <p className="text-lg text-foreground leading-relaxed">
-              Our institution places a high priority on providing job-oriented skill training to
-              equip our students with the necessary knowledge and skills to excel in their chosen
-              fields.
-            </p>
-            <p className="text-lg text-foreground leading-relaxed">
-              With state-of-the-art facilities and a commitment to excellence, we prepare our
-              students not just for jobs, but for successful careers that make a real impact.
-            </p>
-            <a href="/about" className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 font-medium transition-colors duration-300">
-              Learn More About Us
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </motion.div>
-        </div>
+        
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => <motion.div key={feature.title} initial={{
