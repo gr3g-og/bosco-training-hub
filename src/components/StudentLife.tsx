@@ -200,13 +200,12 @@ export const StudentLife = () => {
   };
   return <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img src={studentLife1} alt="Student Life at Don Bosco" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-primary/20" />
         </div>
-        <div className="relative z-10 text-center px-4">
-          
+        <div className="relative z-10 text-left px-8 pb-12 max-w-3xl">
           <motion.h1 initial={{
           opacity: 0,
           y: 30
@@ -216,7 +215,7 @@ export const StudentLife = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.1
-        }} className="text-4xl font-display mt-2 font-extrabold text-[#ffae00] md:text-5xl">
+        }} className="text-4xl font-display font-extrabold text-white md:text-5xl">
             Student Life
           </motion.h1>
           <motion.p initial={{
@@ -228,7 +227,7 @@ export const StudentLife = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.2
-        }} className="text-lg max-w-2xl mx-auto mt-4 text-destructive-foreground my-[56px]">
+        }} className="text-lg mt-4 text-white/90">
             Be part of a diverse global community and a vibrant academic life. Engage in recreational activities, student governance, and networking to enrich your campus experience at Don Bosco Technical Institute     
           </motion.p>
         </div>
