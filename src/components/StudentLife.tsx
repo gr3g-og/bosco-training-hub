@@ -160,7 +160,7 @@ export const StudentLife = () => {
             alt="Student Life at Don Bosco"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-primary/20" />
         </div>
         <div className="relative z-10 text-center px-4">
           <motion.span
