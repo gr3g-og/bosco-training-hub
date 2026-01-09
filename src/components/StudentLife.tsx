@@ -200,49 +200,46 @@ export const StudentLife = () => {
   };
   return <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative min-h-screen flex items-center pt-20">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
           <img src={studentLife1} alt="Student Life at Don Bosco" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-primary/20" />
-          <div className="absolute bottom-0 left-0 right-0 h-24 backdrop-blur-md bg-gradient-to-t from-background/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
         </div>
-        <div className="relative z-10 text-center px-4">
-          <motion.span initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6
-        }} className="font-display font-semibold text-2xl text-primary-foreground">
-            Experience Don Bosco
-          </motion.span>
-          <motion.h1 initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6,
-          delay: 0.1
-        }} className="text-4xl md:text-6xl font-display mt-2 text-destructive font-extrabold">
-            Student Life
-          </motion.h1>
-          <motion.p initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6,
-          delay: 0.2
-        }} className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-            A vibrant community where learning meets fun, and friendships last a lifetime
-          </motion.p>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-block text-secondary font-display font-semibold text-lg"
+              >
+                Experience Don Bosco
+              </motion.span>
+              <h1 className="text-5xl md:text-7xl font-display font-bold text-primary-foreground leading-tight">
+                Student <span className="text-secondary">Life</span>
+              </h1>
+              <p className="text-2xl md:text-3xl text-primary-foreground/90 font-display font-semibold">
+                Where Learning Meets Community
+              </p>
+              <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl leading-relaxed">
+                A vibrant community where learning meets fun, and friendships last a lifetime. 
+                Discover the activities, clubs, and experiences that make Don Bosco special.
+              </p>
+            </motion.div>
+          </div>
         </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
       </section>
 
       {/* Main Content Section */}
