@@ -321,14 +321,48 @@ export const StudentLife = () => {
         </div>
       </section>
 
-      {/* Clubs & Organizations Section */}
-      
-
-      {/* Upcoming Events Section */}
-      
-
-      {/* Campus Facilities Section */}
-      
+      {/* Where We Are Section */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={studentLife3} 
+            alt="Don Bosco Campus" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/80" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white uppercase tracking-wide">
+              Where We Are
+            </h2>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
+              Don Bosco Technical Institute is located in Upper Hill, Nairobi, Kenya - a prime location with excellent accessibility.
+            </p>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-black transition-colors"
+              asChild
+            >
+              <a 
+                href="https://maps.app.goo.gl/327gwenYDMKwUQYA9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Learn about our location
+                <ChevronRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Student Testimonials Section */}
       <section className="py-24">
