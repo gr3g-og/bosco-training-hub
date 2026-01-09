@@ -226,7 +226,7 @@ export const StudentLife = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.1
-        }} className="text-4xl md:text-6xl font-display mt-2 text-destructive font-extrabold">
+        }} className="text-4xl font-display mt-2 font-extrabold text-[#ffae00] md:text-5xl">
             Student Life
           </motion.h1>
           <motion.p initial={{
@@ -238,8 +238,8 @@ export const StudentLife = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.2
-        }} className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-            A vibrant community where learning meets fun, and friendships last a lifetime
+        }} className="text-lg max-w-2xl mx-auto mt-4 text-destructive-foreground my-[56px]">
+            Be part of a diverse global community and a vibrant academic life. Engage in recreational activities, student governance, and networking to enrich your campus experience at Don Bosco Technical Institute     
           </motion.p>
         </div>
       </section>
