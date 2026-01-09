@@ -204,6 +204,7 @@ export const StudentLife = () => {
         <div className="absolute inset-0">
           <img src={studentLife1} alt="Student Life at Don Bosco" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-primary/20" />
+          <div className="absolute bottom-0 left-0 right-0 h-24 backdrop-blur-md bg-gradient-to-t from-background/50 to-transparent" />
         </div>
         <div className="relative z-10 text-center px-4">
           <motion.span initial={{
