@@ -206,17 +206,7 @@ export const StudentLife = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-primary/20" />
         </div>
         <div className="relative z-10 text-center px-4">
-          <motion.span initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6
-        }} className="font-display font-semibold text-2xl text-primary-foreground">
-            Experience Don Bosco
-          </motion.span>
+          
           <motion.h1 initial={{
           opacity: 0,
           y: 30
@@ -257,12 +247,8 @@ export const StudentLife = () => {
           } : {}} transition={{
             duration: 0.6
           }} className="space-y-6">
-              <span className="text-secondary font-display font-semibold text-lg">
-                Student Experience
-              </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
-                A Vibrant Student Life Full of Fun, Play, and Education
-              </h2>
+              
+              
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Don Bosco Training Institute offers a vibrant student life that is full of fun, play,
                 and education. Our students enjoy a well-rounded experience that includes engaging
