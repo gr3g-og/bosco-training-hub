@@ -248,12 +248,12 @@ export const StudentLife = () => {
           }} className="space-y-6">
               
               
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg leading-relaxed text-black">
                 Don Bosco Training Institute offers a vibrant student life that is full of fun, play,
                 and education. Our students enjoy a well-rounded experience that includes engaging
                 classroom activities, exciting extracurriculars, and a supportive community.
               </p>
-              <p className="text-lg text-foreground leading-relaxed font-medium">
+              <p className="text-lg leading-relaxed font-medium text-primary">
                 Join us and discover the joys of learning and personal growth!
               </p>
 
@@ -269,12 +269,12 @@ export const StudentLife = () => {
                 delay: 0.2 + index * 0.1
               }} className="space-y-2">
                     <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                      <highlight.icon className="w-5 h-5 text-accent" />
+                      <highlight.icon className="w-5 h-5 text-amber-600" />
                     </div>
-                    <h3 className="font-display font-semibold text-foreground">
+                    <h3 className="font-display font-semibold text-[#ad2300]">
                       {highlight.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                    <p className="text-sm text-black">{highlight.description}</p>
                   </motion.div>)}
               </div>
 
@@ -322,163 +322,13 @@ export const StudentLife = () => {
       </section>
 
       {/* Clubs & Organizations Section */}
-      <section className="py-24 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="text-center mb-12">
-            <span className="text-secondary font-display font-semibold text-lg">
-              Get Involved
-            </span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-2">
-              Clubs & Organizations
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
-              Join one of our many clubs and discover new passions, make friends, and develop leadership skills.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {clubs.map((club, index) => <motion.div key={club.name} initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.5,
-            delay: index * 0.1
-          }}>
-                <Card className="h-full hover:shadow-lg transition-shadow bg-background border-border">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <club.icon className="w-7 h-7 text-primary" />
-                    </div>
-                    <h3 className="font-display font-semibold text-foreground mb-2">{club.name}</h3>
-                    <p className="text-sm text-muted-foreground">{club.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>)}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Upcoming Events Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <motion.div initial={{
-            opacity: 0,
-            y: 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.6
-          }} className="text-center mb-12">
-              <span className="text-secondary font-display font-semibold text-lg">
-                Mark Your Calendar
-              </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-2">
-                Upcoming Events
-              </h2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {events.map((event, index) => <motion.div key={event.title} initial={{
-              opacity: 0,
-              x: index % 2 === 0 ? -20 : 20
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.5,
-              delay: index * 0.1
-            }}>
-                  <Card className="hover:shadow-lg transition-shadow bg-background border-border">
-                    <CardContent className="p-6">
-                      <h3 className="font-display font-semibold text-lg text-foreground mb-3">
-                        {event.title}
-                      </h3>
-                      <div className="space-y-2 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4 text-primary" />
-                          <span>{event.date}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4 text-primary" />
-                          <span>{event.location}</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>)}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Campus Facilities Section */}
-      <section className="py-24 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="text-center mb-12">
-            <span className="text-secondary font-display font-semibold text-lg">
-              Campus Life
-            </span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-2">
-              Our Facilities
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
-              We provide everything students need to thrive both academically and personally.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {facilities.map((facility, index) => <motion.div key={facility.name} initial={{
-            opacity: 0,
-            scale: 0.95
-          }} whileInView={{
-            opacity: 1,
-            scale: 1
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.5,
-            delay: index * 0.1
-          }} className="text-center">
-                <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <facility.icon className="w-8 h-8 text-secondary" />
-                </div>
-                <h3 className="font-display font-semibold text-foreground mb-1">{facility.name}</h3>
-                <p className="text-sm text-muted-foreground">{facility.description}</p>
-              </motion.div>)}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Student Testimonials Section */}
       <section className="py-24">
