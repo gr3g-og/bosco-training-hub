@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
-import { Smile, BookOpen, Users2, Sparkles, ChevronLeft, ChevronRight, X, Trophy, Music, Palette, Heart, Calendar, MapPin, Clock, Utensils, Dumbbell, Wifi, Bus } from "lucide-react";
+import { Smile, BookOpen, Users2, Sparkles, ChevronLeft, ChevronRight, X } from "lucide-react";
 import studentLife1 from "@/assets/student-life-1.avif";
 import studentLife2 from "@/assets/student-life-2.avif";
 import studentLife3 from "@/assets/student-life-3.avif";
@@ -41,57 +41,6 @@ const highlights = [{
   icon: Smile,
   title: "Personal Growth",
   description: "Holistic development focusing on both technical skills and character building."
-}];
-const clubs = [{
-  icon: Trophy,
-  name: "Sports Club",
-  description: "Football, basketball, volleyball, and athletics"
-}, {
-  icon: Music,
-  name: "Music & Drama",
-  description: "Choir, band, and theatrical performances"
-}, {
-  icon: Palette,
-  name: "Arts & Crafts",
-  description: "Painting, drawing, and creative expression"
-}, {
-  icon: Heart,
-  name: "Community Service",
-  description: "Giving back through volunteer activities"
-}];
-const events = [{
-  title: "Annual Sports Day",
-  date: "March 15, 2026",
-  location: "Main Campus Field"
-}, {
-  title: "Technical Exhibition",
-  date: "April 22, 2026",
-  location: "Exhibition Hall"
-}, {
-  title: "Cultural Festival",
-  date: "May 10, 2026",
-  location: "Auditorium"
-}, {
-  title: "Graduation Ceremony",
-  date: "June 28, 2026",
-  location: "Main Hall"
-}];
-const facilities = [{
-  icon: Utensils,
-  name: "Cafeteria",
-  description: "Nutritious meals served daily"
-}, {
-  icon: Dumbbell,
-  name: "Sports Facilities",
-  description: "Well-equipped fields and courts"
-}, {
-  icon: Wifi,
-  name: "Computer Labs",
-  description: "Modern IT infrastructure"
-}, {
-  icon: Bus,
-  name: "Transport",
-  description: "Safe transportation for students"
 }];
 const testimonials = [{
   quote: "Don Bosco has been a life-changing experience. The practical training I received helped me secure a job even before graduation!",
