@@ -152,8 +152,8 @@ export const Contact = () => {
                 <p className="mb-4">
                   Join our next intake and start building your future today.
                 </p>
-                <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90">
-                  View Available Programs
+                <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90" asChild>
+                  <a href="/programs">View Available Programs</a>
                 </Button>
               </CardContent>
             </Card>
