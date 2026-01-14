@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Award, Heart, Lightbulb, Shield, GraduationCap, Building, Briefcase, Calendar, Globe, Sun, Wrench, HandHeart, ChevronLeft, ChevronRight } from "lucide-react";
+import { GraduationCap, Building, Briefcase, Calendar, Globe, Sun, Wrench, HandHeart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import principalImage from "@/assets/principal.png";
-import facilitiesImage from "@/assets/facilities.jpg";
-import studentLife1 from "@/assets/student-life-1.avif";
-import studentLife2 from "@/assets/student-life-2.avif";
-import studentLife3 from "@/assets/student-life-3.avif";
 import campusView2 from "@/assets/campus-view-2.png";
 import administratorImage from "@/assets/administrator.avif";
 import campus1 from "@/assets/campus-1.avif";
@@ -21,23 +17,6 @@ import campus7 from "@/assets/campus-7.avif";
 import campus8 from "@/assets/campus-8.avif";
 import campus9 from "@/assets/campus-9.avif";
 import campus10 from "@/assets/campus-10.avif";
-const coreValues = [{
-  icon: Award,
-  title: "Excellence",
-  description: "We strive for the highest standards in everything we do."
-}, {
-  icon: Shield,
-  title: "Integrity",
-  description: "We uphold honesty and strong moral principles."
-}, {
-  icon: Heart,
-  title: "Service",
-  description: "We serve our community with dedication and compassion."
-}, {
-  icon: Lightbulb,
-  title: "Innovation",
-  description: "We embrace new ideas and modern training methods."
-}];
 const stats = [{
   icon: GraduationCap,
   value: "5000+",
@@ -93,19 +72,6 @@ const initiatives = [{
   title: "NVTI Certification",
   description: "Employment-oriented training leading to NVTI-compatible certifications recognized by employers nationwide."
 }];
-const facilities = [{
-  image: facilitiesImage,
-  title: "Modern Workshops"
-}, {
-  image: studentLife1,
-  title: "Practical Training"
-}, {
-  image: studentLife2,
-  title: "Classroom Learning"
-}, {
-  image: studentLife3,
-  title: "Student Activities"
-}];
 const campusImages = [{
   image: campus1,
   title: "Campus Entrance",
@@ -150,10 +116,8 @@ const campusImages = [{
 const About = () => {
   const heroRef = useRef(null);
   const historyRef = useRef(null);
-  const missionRef = useRef(null);
   const leadershipRef = useRef(null);
   const statsRef = useRef(null);
-  const facilitiesRef = useRef(null);
   const campusRef = useRef(null);
   const [currentCampusSlide, setCurrentCampusSlide] = useState(0);
   const heroInView = useInView(heroRef, {
@@ -164,19 +128,11 @@ const About = () => {
     once: true,
     margin: "-100px"
   });
-  const missionInView = useInView(missionRef, {
-    once: true,
-    margin: "-100px"
-  });
   const leadershipInView = useInView(leadershipRef, {
     once: true,
     margin: "-100px"
   });
   const statsInView = useInView(statsRef, {
-    once: true,
-    margin: "-100px"
-  });
-  const facilitiesInView = useInView(facilitiesRef, {
     once: true,
     margin: "-100px"
   });
@@ -407,31 +363,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Mission & Vision Section */}
-        <section ref={missionRef} className="py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              
-
-              
-            </div>
-
-            <motion.div initial={{
-            opacity: 0,
-            y: 30
-          }} animate={missionInView ? {
-            opacity: 1,
-            y: 0
-          } : {}} transition={{
-            duration: 0.6,
-            delay: 0.2
-          }} className="text-center mb-12">
-              
-            </motion.div>
-
-            
-          </div>
-        </section>
 
         {/* Stats Section */}
         <section ref={statsRef} className="py-24 bg-primary text-primary-foreground">
@@ -474,10 +405,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Facilities Section */}
-        <section ref={facilitiesRef} className="py-24 bg-background">
-          
-        </section>
 
         {/* Our Campus Carousel Section */}
         <section ref={campusRef} className="py-24 bg-gradient-subtle">

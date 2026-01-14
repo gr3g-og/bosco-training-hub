@@ -292,7 +292,7 @@ export const StudentLife = () => {
               Where We Are
             </h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              Don Bosco Technical Institute is located in Upper Hill, Nairobi, Kenya - a prime location with excellent accessibility.
+              Don Bosco Technical Institute is located in Tema Community 22, off Afariwa–Akosombo Road, Ashaiman, in the Greater Accra Region of Ghana.
             </p>
             <Button 
               variant="outline" 
