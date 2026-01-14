@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { GraduationCap, Building, Briefcase, Calendar, Globe, Sun, Wrench, HandHeart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import principalImage from "@/assets/principal.png";
 import campusView2 from "@/assets/campus-view-2.png";
 import administratorImage from "@/assets/administrator.avif";
@@ -155,6 +156,11 @@ const About = () => {
     setCurrentCampusSlide(prev => (prev - 1 + campusImages.length) % campusImages.length);
   };
   return <div className="min-h-screen">
+      <SEO 
+        title="About Us"
+        description="Learn about Don Bosco Training Institute's 25+ years of excellence in vocational education. Discover our Salesian mission, leadership, and impact on youth empowerment in Ghana."
+        path="/about"
+      />
       <Navigation />
       <main>
         {/* Hero Section */}

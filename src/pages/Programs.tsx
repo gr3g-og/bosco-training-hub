@@ -3,7 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-
+import { SEO } from "@/components/SEO";
 import programAC from "@/assets/program-ac-refrigeration.jpg";
 import programAutomobile from "@/assets/program-automobile.jpg";
 import programCatering from "@/assets/program-catering.jpg";
@@ -65,6 +65,11 @@ const programs = [
 const ProgramsPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Training Programs"
+        description="Explore 9 vocational training programs at Don Bosco Training Institute: Electrical, Automotive, IT & Design, Cosmetology, Catering, and more. NVTI-certified courses for career success."
+        path="/programs"
+      />
       <Navigation />
       
       <main className="pt-20">
