@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Calendar, ArrowRight, Bell } from "lucide-react";
+import { Calendar, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -110,15 +110,9 @@ export const News = () => {
                     {item.description}
                   </p>
                   
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
-                      <span>{item.date}</span>
-                    </div>
-                    <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
-                      Read More
-                      <ArrowRight className="w-4 h-4 ml-1" />
-                    </Button>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto pt-4 border-t border-border">
+                    <Calendar className="w-4 h-4" />
+                    <span>{item.date}</span>
                   </div>
                 </CardContent>
               </Card>

@@ -4,11 +4,11 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Programs", href: "#programs" },
-    { name: "Student Life", href: "#student-life" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Programs", href: "/programs" },
+    { name: "Student Life", href: "/student-life" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   const socialLinks = [
