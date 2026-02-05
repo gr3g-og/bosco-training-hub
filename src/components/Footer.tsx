@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+ import { Facebook } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,13 +11,7 @@ export const Footer = () => {
     { name: "Contact", href: "/#contact" },
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-  ];
+   const facebookUrl = "https://www.facebook.com/DBTECH.Gh/";
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -60,18 +54,15 @@ export const Footer = () => {
 
           <div>
             <h4 className="font-display font-semibold text-lg mb-4">Follow Us</h4>
-            <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-primary-foreground/10 hover:bg-secondary rounded-lg flex items-center justify-center transition-colors"
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
+             <a
+               href={facebookUrl}
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Facebook"
+               className="w-10 h-10 bg-primary-foreground/10 hover:bg-secondary rounded-lg flex items-center justify-center transition-colors"
+             >
+               <Facebook className="w-5 h-5" />
+             </a>
           </div>
         </div>
 
