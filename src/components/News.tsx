@@ -107,7 +107,7 @@ export const News = () => {
               exit={{ y: -60, opacity: 0 }}
               transition={{ duration: 0.45, ease: "easeInOut" }}
             >
-              <Card className="hover:shadow-lg hover:shadow-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 bg-background">
+              <Card className="border-l-4 border-l-primary border border-border/50 shadow-md hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 bg-background">
                 <CardContent className="p-6 flex flex-col">
                   <div className="flex items-center justify-between mb-4">
                     <Badge className={getTypeColor(item.type)}>
