@@ -1,30 +1,24 @@
 
 
-## Vertical Auto-Shuffling News Carousel
+## Make News Card Stand Out with Primary Accent Border
 
-Transform the News & Announcements section from a static 3-column grid into an auto-rotating vertical carousel that cycles through announcements one at a time with smooth sliding animations.
+The news card currently blends into the background because it uses `bg-background` with a transparent border on a `bg-muted/30` section. Adding a primary (orange/coral) accent border will give it a bold, branded look.
 
 ### What Changes
 
-**Current behavior:** All 3 announcement cards are displayed side-by-side in a grid, always visible.
+**Current:** Card has a transparent border and white background, making it nearly invisible against the light section background.
 
-**New behavior:** One announcement card is shown at a time, and they automatically slide vertically (upward) to reveal the next one every few seconds. The animation loops continuously, creating a dynamic "news ticker" feel.
-
-### Features
-- Cards slide upward with a smooth transition when switching
-- Auto-advances every ~4 seconds
-- Includes small dot indicators so visitors can see which announcement is active
-- Pauses auto-rotation when hovered (so users can read)
-- Centered single card layout with a max-width for readability
+**New:** Card will have a visible left border in the primary orange/coral color, plus a subtle shadow to add depth. This creates a clear visual separation and reinforces the brand identity.
 
 ### Technical Details
 
-**File:** `src/components/News.tsx`
+**File:** `src/components/News.tsx` (line 110)
 
-1. Add a `useState` for tracking the active announcement index
-2. Add a `useEffect` with `setInterval` to auto-advance the index every 4 seconds
-3. Use `framer-motion`'s `AnimatePresence` with vertical slide transitions (`y` axis enter/exit)
-4. Replace the 3-column grid with a single centered card container
-5. Add dot indicators below the card for visual feedback
-6. Pause the interval on mouse hover using `onMouseEnter`/`onMouseLeave`
-7. The card will animate out upward and the next card will animate in from below, creating a smooth vertical shuffle effect
+Update the Card's className from:
+- `border border-transparent` (invisible border)
+
+To:
+- `border-l-4 border-l-primary border border-border/50 shadow-md` (bold orange left accent border, light surrounding border, and medium shadow)
+
+This gives the card a clear left-edge highlight in the brand color while keeping the rest of the card clean and readable.
+
