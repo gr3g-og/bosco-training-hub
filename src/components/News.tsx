@@ -113,7 +113,7 @@ export const News = () => {
                     <Badge className={getTypeColor(item.type)}>
                       {getTypeLabel(item.type)}
                     </Badge>
-                    {item.isNew && <Badge variant="outline" className="border-secondary text-black">
+                    {item.isNew && <Badge variant="outline" className="border-secondary text-black bg-secondary">
                         New
                       </Badge>}
                   </div>
