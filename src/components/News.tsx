@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { Calendar, Bell } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 const announcements = [{
@@ -57,17 +56,31 @@ export const News = () => {
     once: true,
     margin: "-100px"
   });
-  return <section id="news" className="py-24 bg-muted/30" ref={ref}>
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const advance = useCallback(() => {
+    setActiveIndex((prev) => (prev + 1) % announcements.length);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(advance, 4000);
+    return () => clearInterval(interval);
+  }, [isPaused, advance]);
+
+  const item = announcements[activeIndex];
+
+  return (
+    <section id="news" className="py-24 bg-muted/30" ref={ref}>
       <div className="container mx-auto px-4">
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} animate={isInView ? {
-        opacity: 1,
-        y: 0
-      } : {}} transition={{
-        duration: 0.6
-      }} className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <div className="inline-flex items-center gap-2 text-primary px-4 py-2 rounded-full mb-4 border-destructive bg-primary-foreground">
             <Bell className="w-4 h-4" />
             <span className="font-medium text-sm text-[#ff2e2e]">Latest Updates</span>
@@ -80,44 +93,64 @@ export const News = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {announcements.map((item, index) => <motion.div key={item.id} initial={{
-          opacity: 0,
-          y: 30
-        }} animate={isInView ? {
-          opacity: 1,
-          y: 0
-        } : {}} transition={{
-          duration: 0.5,
-          delay: index * 0.1
-        }}>
-              <Card className="h-full hover:shadow-lg hover:shadow-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 bg-background">
-                <CardContent className="p-6 flex flex-col h-full">
+        <div
+          className="max-w-xl mx-auto relative overflow-hidden"
+          style={{ minHeight: 220 }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={item.id}
+              initial={{ y: 60, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -60, opacity: 0 }}
+              transition={{ duration: 0.45, ease: "easeInOut" }}
+            >
+              <Card className="hover:shadow-lg hover:shadow-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 bg-background">
+                <CardContent className="p-6 flex flex-col">
                   <div className="flex items-center justify-between mb-4">
                     <Badge className={getTypeColor(item.type)}>
                       {getTypeLabel(item.type)}
                     </Badge>
-                    {item.isNew && <Badge variant="outline" className="border-secondary text-secondary">
+                    {item.isNew && (
+                      <Badge variant="outline" className="border-secondary text-secondary">
                         New
-                      </Badge>}
+                      </Badge>
+                    )}
                   </div>
-                  
                   <h3 className="text-xl font-display font-semibold text-foreground mb-3">
                     {item.title}
                   </h3>
-                  
-                  <p className="text-muted-foreground mb-4 flex-grow">
+                  <p className="text-muted-foreground mb-4">
                     {item.description}
                   </p>
-                  
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mt-auto pt-4 border-t border-border">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground pt-4 border-t border-border">
                     <Calendar className="w-4 h-4" />
                     <span>{item.date}</span>
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>)}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="flex justify-center gap-2 mt-6">
+          {announcements.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                index === activeIndex
+                  ? "bg-primary scale-125"
+                  : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+              }`}
+              aria-label={`Go to announcement ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
