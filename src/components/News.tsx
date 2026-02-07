@@ -56,31 +56,28 @@ export const News = () => {
     once: true,
     margin: "-100px"
   });
-
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-
   const advance = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % announcements.length);
+    setActiveIndex(prev => (prev + 1) % announcements.length);
   }, []);
-
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(advance, 4000);
     return () => clearInterval(interval);
   }, [isPaused, advance]);
-
   const item = announcements[activeIndex];
-
-  return (
-    <section id="news" className="py-24 bg-muted/30" ref={ref}>
+  return <section id="news" className="py-24 bg-muted/30" ref={ref}>
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} animate={isInView ? {
+        opacity: 1,
+        y: 0
+      } : {}} transition={{
+        duration: 0.6
+      }} className="text-center mb-12">
           <div className="inline-flex items-center gap-2 text-primary px-4 py-2 rounded-full mb-4 border-destructive bg-primary-foreground">
             <Bell className="w-4 h-4" />
             <span className="font-medium text-sm text-[#ff2e2e]">Latest Updates</span>
@@ -93,31 +90,32 @@ export const News = () => {
           </p>
         </motion.div>
 
-        <div
-          className="max-w-xl mx-auto relative overflow-hidden"
-          style={{ minHeight: 220 }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
+        <div className="max-w-xl mx-auto relative overflow-hidden" style={{
+        minHeight: 220
+      }} onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
           <AnimatePresence mode="wait">
-            <motion.div
-              key={item.id}
-              initial={{ y: 60, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -60, opacity: 0 }}
-              transition={{ duration: 0.45, ease: "easeInOut" }}
-            >
+            <motion.div key={item.id} initial={{
+            y: 60,
+            opacity: 0
+          }} animate={{
+            y: 0,
+            opacity: 1
+          }} exit={{
+            y: -60,
+            opacity: 0
+          }} transition={{
+            duration: 0.45,
+            ease: "easeInOut"
+          }}>
               <Card className="border-l-4 border-l-primary border border-border/50 shadow-md hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 bg-background">
-                <CardContent className="p-6 flex flex-col">
+                <CardContent className="p-6 flex flex-col border-solid border-[#ff571f] border-2 shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <Badge className={getTypeColor(item.type)}>
                       {getTypeLabel(item.type)}
                     </Badge>
-                    {item.isNew && (
-                      <Badge variant="outline" className="border-secondary text-secondary">
+                    {item.isNew && <Badge variant="outline" className="border-secondary text-secondary">
                         New
-                      </Badge>
-                    )}
+                      </Badge>}
                   </div>
                   <h3 className="text-xl font-display font-semibold text-foreground mb-3">
                     {item.title}
@@ -137,20 +135,8 @@ export const News = () => {
 
         {/* Dot indicators */}
         <div className="flex justify-center gap-2 mt-6">
-          {announcements.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                index === activeIndex
-                  ? "bg-primary scale-125"
-                  : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-              }`}
-              aria-label={`Go to announcement ${index + 1}`}
-            />
-          ))}
+          {announcements.map((_, index) => <button key={index} onClick={() => setActiveIndex(index)} className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === activeIndex ? "bg-primary scale-125" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"}`} aria-label={`Go to announcement ${index + 1}`} />)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
