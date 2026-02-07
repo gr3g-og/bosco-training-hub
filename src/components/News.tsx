@@ -125,7 +125,7 @@ export const News = () => {
                   </p>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground pt-4 border-t border-border">
                     <Calendar className="w-4 h-4 text-black" />
-                    <span>{item.date}</span>
+                    <span className="text-foreground">{item.date}</span>
                   </div>
                 </CardContent>
               </Card>
