@@ -154,7 +154,7 @@ export const Contact = () => {
                   Join our next intake and start building your future today.
                 </p>
                 <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90" asChild>
-                  <a href="/programs">View Available Programs</a>
+                  <Link to="/programs">View Available Programs</Link>
                 </Button>
               </CardContent>
             </Card>
