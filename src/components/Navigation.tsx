@@ -70,7 +70,7 @@ export const Navigation = () => {
               transition={{ delay: 0.5 }}
             >
               <Button variant="default" size="sm" asChild>
-                <a href="#contact">Enroll Now</a>
+                <Link to={isHomePage ? "#contact" : "/#contact"}>Enroll Now</Link>
               </Button>
             </motion.div>
           </div>
