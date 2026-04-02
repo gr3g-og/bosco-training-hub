@@ -118,7 +118,7 @@ export const Navigation = () => {
               )
             ))}
             <Button variant="default" size="sm" className="w-full mt-4" asChild>
-              <a href="#contact">Enroll Now</a>
+              <Link to={isHomePage ? "#contact" : "/#contact"}>Enroll Now</Link>
             </Button>
           </motion.div>
         )}
