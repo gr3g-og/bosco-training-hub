@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 const contactInfo = [{
   icon: Phone,
   title: "Phone",
@@ -153,7 +154,7 @@ export const Contact = () => {
                   Join our next intake and start building your future today.
                 </p>
                 <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90" asChild>
-                  <a href="/programs">View Available Programs</a>
+                  <Link to="/programs">View Available Programs</Link>
                 </Button>
               </CardContent>
             </Card>

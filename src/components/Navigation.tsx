@@ -22,17 +22,17 @@ export const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <motion.a
-            href="#home"
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center space-x-3"
           >
-            <img src={logo} alt="Don Bosco Training Institute Logo" className="h-12 w-12" />
-            <h1 className="text-xl font-display font-bold text-foreground hidden sm:block">
-              Don Bosco
-            </h1>
-          </motion.a>
+            <Link to="/" className="flex items-center space-x-3">
+              <img src={logo} alt="Don Bosco Training Institute Logo" className="h-12 w-12" />
+              <h1 className="text-xl font-display font-bold text-foreground hidden sm:block">
+                Don Bosco
+              </h1>
+            </Link>
+          </motion.div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -70,7 +70,7 @@ export const Navigation = () => {
               transition={{ delay: 0.5 }}
             >
               <Button variant="default" size="sm" asChild>
-                <a href="#contact">Enroll Now</a>
+                <Link to={isHomePage ? "#contact" : "/#contact"}>Enroll Now</Link>
               </Button>
             </motion.div>
           </div>
@@ -118,7 +118,7 @@ export const Navigation = () => {
               )
             ))}
             <Button variant="default" size="sm" className="w-full mt-4" asChild>
-              <a href="#contact">Enroll Now</a>
+              <Link to={isHomePage ? "#contact" : "/#contact"}>Enroll Now</Link>
             </Button>
           </motion.div>
         )}
