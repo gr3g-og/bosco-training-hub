@@ -70,7 +70,8 @@ export const Footer = () => {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/70 text-sm">
-              © {currentYear} Don Bosco Training Institute, Ashaiman. All rights reserved.
+              © {currentYear} Don Bosco Training Institute, Ashaiman. All rights reserved. · Website by{" "}
+              <a href="https://greyfixtech.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">Greyfixtech</a>
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-primary-foreground/70 hover:text-secondary transition-colors">
