@@ -1,24 +1,26 @@
 
 
-## Make News Card Stand Out with Primary Accent Border
+## Add Developer Credit to Footer
 
-The news card currently blends into the background because it uses `bg-background` with a transparent border on a `bg-muted/30` section. Adding a primary (orange/coral) accent border will give it a bold, branded look.
+Add a subtle "Website by Greyfixtech" credit line in the footer's copyright section.
 
 ### What Changes
 
-**Current:** Card has a transparent border and white background, making it nearly invisible against the light section background.
-
-**New:** Card will have a visible left border in the primary orange/coral color, plus a subtle shadow to add depth. This creates a clear visual separation and reinforces the brand identity.
+A small credit link will appear next to the copyright text at the bottom of the footer, styled in a muted tone to keep it understated.
 
 ### Technical Details
 
-**File:** `src/components/News.tsx` (line 110)
+**File:** `src/components/Footer.tsx`
 
-Update the Card's className from:
-- `border border-transparent` (invisible border)
+In the copyright `<div>` at the bottom, add a separator dot and a link after the copyright text:
 
-To:
-- `border-l-4 border-l-primary border border-border/50 shadow-md` (bold orange left accent border, light surrounding border, and medium shadow)
+```
+© 2026 Don Bosco Training Institute, Ashaiman. All rights reserved.
+```
+becomes:
+```
+© 2026 Don Bosco Training Institute, Ashaiman. All rights reserved.  ·  Website by Greyfixtech
+```
 
-This gives the card a clear left-edge highlight in the brand color while keeping the rest of the card clean and readable.
+The "Greyfixtech" text will be an `<a>` tag linking to `https://greyfixtech.com` with `target="_blank"` and `rel="noopener noreferrer"`, styled with `hover:text-secondary` to match the existing link styles.
 
