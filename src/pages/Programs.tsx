@@ -102,20 +102,22 @@ const ProgramsPage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="group overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                    <div className="aspect-[4/3] overflow-hidden">
-                      <img
-                        src={program.image}
-                        alt={program.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <CardContent className="p-5">
-                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {program.name}
-                      </h3>
-                    </CardContent>
-                  </Card>
+                  <Link to={`/programs/${program.slug}`}>
+                    <Card className="group overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                      <div className="aspect-[4/3] overflow-hidden">
+                        <img
+                          src={program.image}
+                          alt={program.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <CardContent className="p-5">
+                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                          {program.name}
+                        </h3>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 </motion.div>
               ))}
             </div>
