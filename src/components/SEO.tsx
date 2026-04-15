@@ -8,7 +8,7 @@ interface SEOProps {
 }
 
 const BASE_URL = "https://donboscoashaiman.org";
-const DEFAULT_IMAGE = "https://lovable.dev/opengraph-image-p98pqg.png";
+const DEFAULT_IMAGE = "https://donboscoashaiman.org/og-image.jpg";
 
 export const SEO = ({ 
   title, 
