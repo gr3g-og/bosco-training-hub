@@ -5,6 +5,7 @@ import programCosmetology from "@/assets/program-cosmetology.jpg";
 import programCrane from "@/assets/program-crane.jpg";
 import programDriving from "@/assets/program-driving.jpg";
 import programElectrical from "@/assets/program-electrical.jpg";
+import programSolar from "@/assets/program-solar.jpg";
 import programForklift from "@/assets/program-forklift.jpg";
 import programIT from "@/assets/program-it-design.jpg";
 
@@ -168,29 +169,54 @@ export const programDetails: Record<string, ProgramDetail> = {
       "Driving Instructor (with further training)",
     ],
   },
-  "electrical-solar": {
-    name: "Electrical Installation & Solar",
+  "electrical-installation": {
+    name: "Electrical Installation",
     image: programElectrical,
     overview:
-      "This program covers domestic and industrial electrical installations, wiring systems, and solar energy technology. Students learn to design, install, and maintain electrical systems while also gaining expertise in solar panel installation and renewable energy solutions — skills in high demand across Ghana and beyond.",
+      "This program covers domestic and industrial electrical installations, wiring systems, and electrical safety. Students learn to design, install, test, and maintain electrical systems in residential, commercial, and industrial settings — building the foundational skills needed for a career as a professional electrician.",
     modules: [
       "Domestic Electrical Wiring & Installation",
       "Industrial Electrical Installation",
       "Electrical Safety & Regulations",
       "Circuit Design & Load Calculations",
-      "Solar Panel Installation & Sizing",
-      "Inverter & Battery Systems",
+      "Cable Sizing & Conduit Installation",
+      "Three-Phase Power Systems",
       "Home & Building Automation",
       "PLC & Industrial Automation (Advanced)",
     ],
-    certification: "NVTI Certificate II in Electrical Installation; Solar Installation Certificate",
+    certification: "NVTI Certificate II in Electrical Installation",
     careers: [
       "Electrician",
-      "Solar Installation Technician",
       "Industrial Electrician",
       "Building Automation Technician",
       "Electrical Contractor",
+      "Maintenance Electrician",
+      "Electrical Estimator",
+    ],
+  },
+  "solar-energy": {
+    name: "Solar Energy Technology",
+    image: programSolar,
+    overview:
+      "The Solar Energy Technology program trains students in the design, installation, and maintenance of solar photovoltaic systems. With Ghana's increasing demand for renewable energy, graduates of this program are well-positioned to serve the growing solar industry across residential, commercial, and off-grid applications.",
+    modules: [
+      "Solar Energy Fundamentals & Photovoltaic Theory",
+      "Solar Panel Installation & Mounting Techniques",
+      "System Sizing & Design for Residential & Commercial",
+      "Inverter, Charge Controller & Battery Systems",
+      "Off-Grid & Grid-Tied System Configuration",
+      "Electrical Wiring for Solar Systems",
+      "System Testing, Commissioning & Troubleshooting",
+      "Solar Business & Project Management",
+    ],
+    certification: "Solar Installation Certificate; Energy Commission Certification (preparation)",
+    careers: [
+      "Solar Installation Technician",
+      "Solar System Designer",
       "Renewable Energy Consultant",
+      "Solar Sales & Project Coordinator",
+      "Off-Grid Energy Specialist",
+      "Self-employed Solar Contractor",
     ],
   },
   "forklift-logistics": {

@@ -11,6 +11,7 @@ import programCosmetology from "@/assets/program-cosmetology.jpg";
 import programCrane from "@/assets/program-crane.jpg";
 import programDriving from "@/assets/program-driving.jpg";
 import programElectrical from "@/assets/program-electrical.jpg";
+import programSolar from "@/assets/program-solar.jpg";
 import programForklift from "@/assets/program-forklift.jpg";
 import programIT from "@/assets/program-it-design.jpg";
 
@@ -46,9 +47,14 @@ const programs = [
     slug: "driving-licensing"
   },
   {
-    name: "Electrical Installation & Solar",
+    name: "Electrical Installation",
     image: programElectrical,
-    slug: "electrical-solar"
+    slug: "electrical-installation"
+  },
+  {
+    name: "Solar Energy Technology",
+    image: programSolar,
+    slug: "solar-energy"
   },
   {
     name: "ForkLift & Logistics",
@@ -67,7 +73,7 @@ const ProgramsPage = () => {
     <div className="min-h-screen bg-background">
       <SEO 
         title="Training Programs"
-        description="Explore 9 vocational training programs at Don Bosco Training Institute: Electrical, Automotive, IT & Design, Cosmetology, Catering, and more. NVTI-certified courses for career success."
+        description="Explore 10 vocational training programs at Don Bosco Training Institute: Electrical, Solar, Automotive, IT & Design, Cosmetology, Catering, and more. NVTI-certified courses for career success."
         path="/programs"
       />
       <Navigation />
