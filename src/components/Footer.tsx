@@ -73,14 +73,6 @@ export const Footer = () => {
               © {currentYear} Don Bosco Training Institute, Ashaiman. All rights reserved. · Website by{" "}
               <a href="https://greyfixtech.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">Greyfixtech</a>
             </p>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-primary-foreground/70 hover:text-secondary transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-primary-foreground/70 hover:text-secondary transition-colors">
-                Terms of Service
-              </a>
-            </div>
           </div>
         </div>
       </div>
