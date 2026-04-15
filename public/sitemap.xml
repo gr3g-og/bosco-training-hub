@@ -33,11 +33,15 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://donboscoashaiman.org/programs/driving</loc>
+    <loc>https://donboscoashaiman.org/programs/driving-licensing</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://donboscoashaiman.org/programs/electrical-solar</loc>
+    <loc>https://donboscoashaiman.org/programs/electrical-installation</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://donboscoashaiman.org/programs/solar-energy</loc>
     <priority>0.7</priority>
   </url>
   <url>
