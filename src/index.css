@@ -35,7 +35,7 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 18 18% 16% / 0.1;
+    --border: 30 18% 88%;                /* light warm border */
     --input: 30 20% 88%;
     --ring: 17 81% 51%;
 
@@ -79,7 +79,7 @@
     --muted-foreground-soft: 30 8% 55%;
     --accent: 17 81% 55%;
     --accent-foreground: 0 0% 100%;
-    --border: 0 0% 100% / 0.1;
+    --border: 18 12% 22%;
     --input: 18 12% 20%;
     --ring: 17 81% 55%;
     --charcoal: 18 14% 7%;
