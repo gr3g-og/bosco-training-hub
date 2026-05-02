@@ -1,136 +1,52 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { Programs } from "@/components/Programs";
+import { ContactStrip } from "@/components/ContactStrip";
 import { SEO } from "@/components/SEO";
-import programAC from "@/assets/program-ac-refrigeration.jpg";
-import programAutomobile from "@/assets/program-automobile.jpg";
-import programCatering from "@/assets/program-catering.jpg";
-import programCosmetology from "@/assets/program-cosmetology.jpg";
-import programCrane from "@/assets/program-crane.jpg";
-import programDriving from "@/assets/program-driving.jpg";
-import programElectrical from "@/assets/program-electrical.jpg";
-import programSolar from "@/assets/program-solar.jpg";
-import programForklift from "@/assets/program-forklift.jpg";
-import programIT from "@/assets/program-it-design.jpg";
-
-const programs = [
-  {
-    name: "Air Condition & Refrigeration",
-    image: programAC,
-    slug: "air-condition-refrigeration"
-  },
-  {
-    name: "Automobile",
-    image: programAutomobile,
-    slug: "automobile"
-  },
-  {
-    name: "Catering & Hospitality",
-    image: programCatering,
-    slug: "catering-hospitality"
-  },
-  {
-    name: "Cosmetology (Beauty & Haircare)",
-    image: programCosmetology,
-    slug: "cosmetology"
-  },
-  {
-    name: "Crane Operation",
-    image: programCrane,
-    slug: "crane-operation"
-  },
-  {
-    name: "Driving & Licensing",
-    image: programDriving,
-    slug: "driving-licensing"
-  },
-  {
-    name: "Electrical Installation",
-    image: programElectrical,
-    slug: "electrical-installation"
-  },
-  {
-    name: "Solar Energy Technology",
-    image: programSolar,
-    slug: "solar-energy"
-  },
-  {
-    name: "ForkLift & Logistics",
-    image: programForklift,
-    slug: "forklift-logistics"
-  },
-  {
-    name: "IT & Graphic Design",
-    image: programIT,
-    slug: "it-graphic-design"
-  }
-];
+import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 
 const ProgramsPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
+      <SEO
         title="Training Programs"
         description="Explore 10 vocational training programs at Don Bosco Training Institute: Electrical, Solar, Automotive, IT & Design, Cosmetology, Catering, and more. NVTI-certified courses for career success."
         path="/programs"
       />
       <Navigation />
-      
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-b from-primary/10 to-background">
-          <div className="container mx-auto px-4">
+
+      <main>
+        {/* Hero */}
+        <section className="pt-32 pb-16 bg-cream px-6 md:px-12">
+          <div className="container mx-auto max-w-3xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-center max-w-3xl mx-auto"
+              transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-                Our Training Programs
+              <div className="flex justify-center">
+                <SectionEyebrow>All Programs</SectionEyebrow>
+              </div>
+              <h1
+                className="font-display font-bold mt-4 mb-5 leading-[1.1]"
+                style={{ fontSize: "clamp(36px, 5vw, 60px)" }}
+              >
+                Pick a trade. <em className="italic text-primary">Build a career.</em>
               </h1>
-              <p className="text-lg text-muted-foreground">
-                Explore our comprehensive range of vocational training programs designed to equip you with practical skills for a successful career.
+              <p className="text-base font-light text-muted-foreground leading-[1.75]">
+                Ten hands-on vocational programs designed for real Ghanaian job
+                markets. Each one leads to NVTI-recognized certification and
+                practical, work-ready skills.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Programs Grid */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {programs.map((program, index) => (
-                <motion.div
-                  key={program.slug}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Link to={`/programs/${program.slug}`}>
-                    <Card className="group overflow-hidden border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                      <div className="aspect-[4/3] overflow-hidden">
-                        <img
-                          src={program.image}
-                          alt={program.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <CardContent className="p-5">
-                        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                          {program.name}
-                        </h3>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Programs pageMode />
       </main>
 
+      <ContactStrip />
       <Footer />
     </div>
   );

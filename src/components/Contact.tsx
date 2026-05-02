@@ -34,7 +34,7 @@ export const Contact = () => {
     once: true,
     margin: "-100px"
   });
-  return <section id="contact" className="py-24 bg-gradient-subtle" ref={ref}>
+  return <section id="contact" className="py-24 bg-white" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.div initial={{
         opacity: 0,
@@ -45,15 +45,15 @@ export const Contact = () => {
       } : {}} transition={{
         duration: 0.6
       }} className="text-center mb-16">
-          <span className="font-display font-semibold mb-2 block text-destructive text-2xl">
-            Open Enrollment
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Start Your Journey Today
+          <div className="flex justify-center mb-4">
+            <span className="section-eyebrow">Get In Touch</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 leading-[1.1]">
+            Start your <em className="italic text-primary">journey</em> today.
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Ready to transform your future? Get in touch with us to learn more about our programs
-            and enrollment process.
+          <p className="text-base md:text-lg font-light text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Ready to transform your future? Get in touch to learn more about our
+            programs and the enrollment process.
           </p>
         </motion.div>
 

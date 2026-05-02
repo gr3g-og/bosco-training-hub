@@ -2,104 +2,121 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Don Bosco Training Institute — editorial design system.
+   All colors MUST be HSL. Tokens map to the uploaded reference style. */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 15 30% 20%;
+    --foreground: 18 18% 16%;            /* charcoal text */
 
     --card: 0 0% 100%;
-    --card-foreground: 15 30% 20%;
+    --card-foreground: 18 18% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 15 30% 20%;
+    --popover-foreground: 18 18% 16%;
 
-    --primary: 15 80% 55%;
+    --primary: 17 81% 51%;               /* #E8571A */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 15 80% 65%;
+    --primary-glow: 18 84% 62%;
+    --primary-dark: 17 82% 41%;          /* #C04312 */
+    --primary-light: 17 84% 62%;         /* #F0784A */
 
     --secondary: 40 90% 60%;
-    --secondary-foreground: 15 30% 20%;
+    --secondary-foreground: 18 18% 16%;
 
-    --muted: 30 20% 96%;
-    --muted-foreground: 15 20% 50%;
+    --muted: 30 25% 96%;
+    --muted-foreground: 22 16% 38%;
+    --muted-foreground-soft: 22 18% 56%;
 
-    --accent: 40 95% 55%;
+    --accent: 17 81% 51%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 88%;
+    --border: 30 18% 88%;                /* light warm border */
     --input: 30 20% 88%;
-    --ring: 15 80% 55%;
+    --ring: 17 81% 51%;
+
+    /* Editorial section tokens */
+    --charcoal: 18 14% 11%;              /* #1A1714 */
+    --cream: 30 35% 98%;                 /* #FDFAF7 */
+    --cream-2: 30 22% 94%;
+    --orange-pale: 22 80% 96%;           /* #FDF2EC */
+    --orange-tint: 22 75% 98%;
 
     --radius: 0.75rem;
 
-    /* Custom gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(15, 80%, 50%), hsl(25, 85%, 55%));
-    --gradient-accent: linear-gradient(135deg, hsl(40, 90%, 60%), hsl(45, 95%, 65%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(30, 20%, 98%));
+    --gradient-hero: linear-gradient(105deg,
+      hsl(var(--charcoal) / 0.88) 0%,
+      hsl(var(--charcoal) / 0.65) 55%,
+      hsl(var(--primary) / 0.18) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(40 90% 60%), hsl(45 95% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(var(--cream)));
 
-    /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(15, 30%, 20%, 0.08);
-    --shadow-medium: 0 10px 40px hsl(15, 30%, 20%, 0.12);
-    --shadow-accent: 0 8px 30px hsl(15, 80%, 55%, 0.25);
+    --shadow-soft: 0 4px 20px hsl(18 30% 20% / 0.08);
+    --shadow-medium: 0 10px 40px hsl(18 30% 20% / 0.12);
+    --shadow-accent: 0 8px 30px hsl(var(--primary) / 0.25);
+    --shadow-orange-glow: 0 12px 32px hsl(var(--primary) / 0.18);
 
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 15 20% 10%;
+    --background: 18 14% 9%;
     --foreground: 0 0% 98%;
-
-    --card: 15 18% 14%;
+    --card: 18 14% 12%;
     --card-foreground: 0 0% 98%;
-
-    --popover: 15 18% 14%;
+    --popover: 18 14% 12%;
     --popover-foreground: 0 0% 98%;
-
-    --primary: 15 80% 55%;
+    --primary: 17 81% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 15 80% 65%;
-
     --secondary: 40 90% 60%;
-    --secondary-foreground: 15 20% 10%;
-
-    --muted: 15 15% 18%;
-    --muted-foreground: 30 10% 65%;
-
-    --accent: 40 95% 55%;
+    --secondary-foreground: 18 14% 9%;
+    --muted: 18 12% 16%;
+    --muted-foreground: 30 10% 70%;
+    --muted-foreground-soft: 30 8% 55%;
+    --accent: 17 81% 55%;
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 15 15% 22%;
-    --input: 15 15% 22%;
-    --ring: 15 80% 55%;
-
-    --gradient-hero: linear-gradient(135deg, hsl(15, 20%, 12%), hsl(20, 22%, 16%));
-    --gradient-accent: linear-gradient(135deg, hsl(40, 90%, 55%), hsl(45, 95%, 60%));
-    --gradient-subtle: linear-gradient(180deg, hsl(15, 20%, 10%), hsl(15, 18%, 12%));
-
-    --shadow-soft: 0 4px 20px hsl(0, 0%, 0%, 0.3);
-    --shadow-medium: 0 10px 40px hsl(0, 0%, 0%, 0.5);
-    --shadow-accent: 0 8px 30px hsl(15, 80%, 55%, 0.4);
+    --border: 18 12% 22%;
+    --input: 18 12% 20%;
+    --ring: 17 81% 55%;
+    --charcoal: 18 14% 7%;
+    --cream: 18 12% 14%;
+    --cream-2: 18 12% 18%;
+    --orange-pale: 18 14% 16%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  h1, h2, h3, h4, h5 { @apply font-display; }
+}
+
+@layer components {
+  /* Section eyebrow — small orange uppercase label with a leading bar */
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2.5 text-[10px] font-semibold uppercase text-primary;
+    letter-spacing: 0.16em;
+  }
+  .section-eyebrow::before {
+    content: '';
+    @apply block h-[2px] w-6 rounded-sm bg-primary;
+  }
+  .section-eyebrow.on-dark { @apply text-primary-light; }
+  .section-eyebrow.on-dark::before { @apply bg-primary-light; }
+
+  /* Sharp pill button (uppercase, letter-spaced) */
+  .btn-sharp {
+    @apply inline-flex items-center justify-center font-sans font-semibold uppercase
+           text-xs px-8 py-[15px] rounded-sharp transition-colors;
+    letter-spacing: 0.08em;
   }
 
-  body {
-    @apply bg-background text-foreground;
-  }
+  /* Reveal on scroll helpers */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s var(--ease), transform .65s var(--ease); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 }
