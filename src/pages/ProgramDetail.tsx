@@ -48,26 +48,27 @@ const ProgramDetailPage = () => {
 
       <main className="pt-20">
         {/* Hero */}
-        <section className="relative h-[50vh] min-h-[320px] overflow-hidden">
+        <section className="relative h-[55vh] min-h-[360px] overflow-hidden">
           <img
             src={program.image}
             alt={program.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-8">
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
             <div className="container mx-auto">
               <Link
                 to="/programs"
-                className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors mb-4"
+                className="inline-flex items-center text-[11px] font-semibold uppercase tracking-[0.12em] text-white/60 hover:text-primary-light transition-colors mb-5"
               >
-                <ArrowLeft className="mr-1 h-4 w-4" />
+                <ArrowLeft className="mr-1.5 h-3.5 w-3.5" />
                 All Programs
               </Link>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-5xl font-display font-bold text-foreground"
+                className="font-display font-bold text-white leading-[1.05]"
+                style={{ fontSize: "clamp(36px, 5vw, 60px)" }}
               >
                 {program.name}
               </motion.h1>
