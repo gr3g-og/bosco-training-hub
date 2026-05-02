@@ -1,79 +1,126 @@
- import { Facebook } from "lucide-react";
+import { Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
+
+const exploreLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Programs", href: "/programs" },
+  { name: "Student Life", href: "/student-life" },
+  { name: "Contact", href: "/#contact" },
+];
+
+const programLinks = [
+  { name: "Electrical Installation", href: "/programs/electrical-installation" },
+  { name: "Solar Energy Technology", href: "/programs/solar-energy" },
+  { name: "Automobile", href: "/programs/automobile" },
+  { name: "IT & Graphic Design", href: "/programs/it-graphic-design" },
+  { name: "All Programs", href: "/programs" },
+];
+
+const facebookUrl = "https://www.facebook.com/DBTECH.Gh/";
 
 export const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const quickLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Programs", href: "/programs" },
-    { name: "Student Life", href: "/student-life" },
-    { name: "Contact", href: "/#contact" },
-  ];
-
-   const facebookUrl = "https://www.facebook.com/DBTECH.Gh/";
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h3 className="text-2xl font-display font-bold mb-4">Don Bosco Training Institute</h3>
-            <p className="text-primary-foreground/80 mb-4">
-              Empowering youth with technical skills for a brighter future.
+    <footer className="bg-[hsl(var(--charcoal))] text-white px-6 md:px-12 pt-16 md:pt-20 pb-8">
+      <div className="container mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-14">
+          {/* Brand */}
+          <div className="md:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-3 mb-5">
+              <img
+                src={logo}
+                alt="Don Bosco logo"
+                className="w-11 h-11 rounded-full object-cover border-2 border-primary"
+              />
+              <span className="font-display font-bold text-base text-white leading-tight">
+                Don Bosco <span className="text-primary-light">Institute</span>
+              </span>
+            </div>
+            <p className="text-[13px] font-light leading-[1.75] text-white/40 max-w-[270px] mb-6">
+              A Salesian non-profit technical institute in Ashaiman, Ghana.
+              Learn a trade, earn a living.
             </p>
-            <p className="text-primary-foreground/70 text-sm">
-              Technical Skill for All
-            </p>
+            <div className="flex gap-2.5">
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-[34px] h-[34px] rounded-full border border-white/15 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary transition-colors"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
+          {/* Explore */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
+            <h4 className="text-[10px] font-semibold uppercase tracking-[0.14em] text-primary-light mb-5">
+              Explore
+            </h4>
+            <ul className="flex flex-col gap-2.5">
+              {exploreLinks.map((l) => (
+                <li key={l.name}>
                   <Link
-                    to={link.href}
-                    className="text-primary-foreground/80 hover:text-secondary transition-colors"
+                    to={l.href}
+                    className="text-[13px] font-light text-white/50 hover:text-white transition-colors"
                   >
-                    {link.name}
+                    {l.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Programs */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-4">Contact</h4>
-            <ul className="space-y-2 text-primary-foreground/80">
-              <li>Ashaiman, Ghana</li>
-              <li>info@donboscoashaiman.com</li>
-              <li>Mon - Fri: 8AM - 5PM</li>
+            <h4 className="text-[10px] font-semibold uppercase tracking-[0.14em] text-primary-light mb-5">
+              Programs
+            </h4>
+            <ul className="flex flex-col gap-2.5">
+              {programLinks.map((l) => (
+                <li key={l.name}>
+                  <Link
+                    to={l.href}
+                    className="text-[13px] font-light text-white/50 hover:text-white transition-colors"
+                  >
+                    {l.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="font-display font-semibold text-lg mb-4">Follow Us</h4>
-             <a
-               href={facebookUrl}
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Facebook"
-               className="w-10 h-10 bg-primary-foreground/10 hover:bg-secondary rounded-lg flex items-center justify-center transition-colors"
-             >
-               <Facebook className="w-5 h-5" />
-             </a>
+            <h4 className="text-[10px] font-semibold uppercase tracking-[0.14em] text-primary-light mb-5">
+              Contact
+            </h4>
+            <ul className="flex flex-col gap-2.5 text-[13px] font-light text-white/50">
+              <li>Tema Community 22</li>
+              <li>Off Afariwa–Akosombo Road</li>
+              <li>Ashaiman, Ghana</li>
+              <li>info@donboscoashaiman.com</li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/70 text-sm">
-              © {currentYear} Don Bosco Training Institute, Ashaiman. All rights reserved. · Website by{" "}
-              <a href="https://greyfixtech.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">Greyfixtech</a>
-            </p>
-          </div>
+        <div className="pt-6 border-t border-white/10 flex flex-wrap justify-between items-center gap-3">
+          <p className="text-[11px] font-light text-white/30">
+            © {year} Don Bosco Training Institute, Ashaiman. All rights reserved. ·
+            Website by{" "}
+            <a
+              href="https://greyfixtech.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-light hover:text-white transition-colors"
+            >
+              Greyfixtech
+            </a>
+          </p>
         </div>
       </div>
     </footer>
