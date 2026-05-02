@@ -1,165 +1,86 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Cpu, Briefcase, Code } from "lucide-react";
-const programs = [{
-  icon: Cpu,
-  title: "Basic Level",
-  description: "Introductory courses for people looking to enter new fields.",
-  level: "Absolute Beginners",
-  color: "primary",
-  courses: [{
-    category: "Automobile",
-    items: []
-  }, {
-    category: "Electrical",
-    items: []
-  }, {
-    category: "Hospitality",
-    items: []
-  }, {
-    category: "Refrigeration/Air Conditioning",
-    items: []
-  }, {
-    category: "Cosmetology",
-    items: []
-  }, {
-    category: "ICT (Microsoft Office)",
-    items: []
-  }]
-}, {
-  icon: Briefcase,
-  title: "Advance Level",
-  description: "Advanced courses for students who need practical understanding of their fields.",
-  level: "Advance Career",
-  color: "secondary",
-  courses: [{
-    category: "Automobile",
-    items: ["Auto Mechanics", "Auto Air Conditioning", "Auto Electrical/Electronics"]
-  }, {
-    category: "Electrical",
-    items: ["Home & Building Automation", "Industrial Installation"]
-  }, {
-    category: "Logistics & Warehousing",
-    items: ["Forklift Operation (Regular)", "Crane Operation (Regular)"]
-  }, {
-    category: "Hospitality",
-    items: ["Front Office", "Food & Beverage", "Cooking & Baking", "House Keeping & Facility Mgt"]
-  }, {
-    category: "Driving (Car)",
-    items: ["Regular", "Weekends", "Polishing"]
-  }, {
-    category: "Cosmetology",
-    items: ["Hair Services", "Beauty Services"]
-  }, {
-    category: "Other",
-    items: ["Solar", "Graphic Design", "Ref/Airconditioning (Industrial)"]
-  }]
-}, {
-  icon: Code,
-  title: "Part-Time Courses",
-  description: "Part-time courses for people who can't attend regular weekday classes.",
-  level: "Weekend Classes",
-  color: "accent",
-  courses: [{
-    category: "Electrical",
-    items: ["Basic (Weekdays, Weekends)", "Advance (Weekdays, Weekends)", "Home & Building Automation", "Industrial Installation", "Automation PLC, HMI (Part I, Part II)"]
-  }, {
-    category: "Logistics & Warehousing",
-    items: ["Forklift Operation (Weekend, Premium)", "Crane Operation (Weekend, Premium)"]
-  }]
-}];
-export const Programs = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-    margin: "-100px"
-  });
-  return <section id="programs" className="py-24 bg-muted/30" ref={ref}>
-      <div className="container mx-auto px-4">
-        <motion.div initial={{
-        opacity: 0,
-        y: 30
-      }} animate={isInView ? {
-        opacity: 1,
-        y: 0
-      } : {}} transition={{
-        duration: 0.6
-      }} className="text-center mb-16">
-          <span className="text-secondary font-display font-semibold text-lg mb-2 block">
-            Our Programs
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Choose Your Path to Success
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore our comprehensive range of technical and vocational training programs designed
-            to equip you with industry-relevant skills.
-          </p>
-        </motion.div>
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
+import { programList } from "@/data/programList";
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {programs.map((program, index) => <motion.div key={program.title} initial={{
-          opacity: 0,
-          y: 30
-        }} animate={isInView ? {
-          opacity: 1,
-          y: 0
-        } : {}} transition={{
-          duration: 0.5,
-          delay: index * 0.1
-        }}>
-              <Card className="h-full hover:shadow-medium transition-shadow duration-300 group border-destructive">
-                <CardHeader>
-                  <div className={`w-14 h-14 bg-${program.color}/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <program.icon className={`w-7 h-7 text-${program.color}`} />
-                  </div>
-                  <CardTitle className="text-2xl font-display">{program.title}</CardTitle>
-                  <CardDescription className="text-base">{program.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Badge variant="secondary" className="font-normal">
-                      {program.level}
-                    </Badge>
-                  </div>
-                  
-                  <Accordion type="single" collapsible className="w-full">
-                    {program.courses.map((course, courseIndex) => <AccordionItem key={courseIndex} value={`course-${courseIndex}`} className="border-border/50">
-                        <AccordionTrigger className="text-sm font-medium hover:no-underline py-3">
-                          {course.category}
-                        </AccordionTrigger>
-                        {course.items.length > 0 && <AccordionContent>
-                            <ul className="space-y-2 pl-4">
-                              {course.items.map((item, itemIndex) => <li key={itemIndex} className="text-sm text-muted-foreground list-disc">
-                                  {item}
-                                </li>)}
-                            </ul>
-                          </AccordionContent>}
-                      </AccordionItem>)}
-                  </Accordion>
-                </CardContent>
-              </Card>
-            </motion.div>)}
+interface ProgramsProps {
+  /** When true, renders the standalone Programs page version (with full header + bg) */
+  pageMode?: boolean;
+}
+
+export const Programs = ({ pageMode = false }: ProgramsProps) => {
+  return (
+    <section
+      id="programs"
+      className={`px-6 md:px-12 py-20 md:py-24 ${pageMode ? "bg-white" : "bg-cream"}`}
+    >
+      <div className="container mx-auto">
+        {/* Editorial header — left heading, right paragraph */}
+        <div className="flex flex-wrap items-end justify-between gap-8 mb-12 md:mb-14">
+          <div className="max-w-md">
+            <SectionEyebrow>Our Programs</SectionEyebrow>
+            <h2
+              className="font-display font-bold leading-[1.1] mt-3"
+              style={{ fontSize: "clamp(34px, 4vw, 52px)" }}
+            >
+              Trades that build a <em className="italic text-primary">future</em>.
+            </h2>
+          </div>
+          <p className="text-sm md:text-[15px] font-light text-muted-foreground max-w-sm leading-[1.75]">
+            Ten hands-on vocational programs, each leading to NVTI-recognized
+            certification and real career pathways across Ghana.
+          </p>
         </div>
 
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} animate={isInView ? {
-        opacity: 1,
-        y: 0
-      } : {}} transition={{
-        duration: 0.6,
-        delay: 0.6
-      }} className="text-center mt-12">
-          <p className="text-muted-foreground mb-6">
-            Can't find what you're looking for? We offer custom training solutions.
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
+          {programList.map((program, i) => (
+            <motion.div
+              key={program.slug}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.45, delay: (i % 5) * 0.06 }}
+            >
+              <Link
+                to={`/programs/${program.slug}`}
+                className="group block bg-white rounded-sharp overflow-hidden border border-border transition-all duration-300 hover:-translate-y-1 hover:shadow-orange-glow"
+              >
+                <div className="relative h-[180px] overflow-hidden">
+                  <img
+                    src={program.image}
+                    alt={program.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.07]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-charcoal/55" />
+                  <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-xs font-semibold uppercase tracking-[0.1em]">
+                      View Program
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-5 pb-5">
+                  <h3 className="font-display font-semibold text-[17px] leading-[1.3] mb-2">
+                    {program.name}
+                  </h3>
+                  <p className="text-xs font-light leading-[1.6] text-muted-foreground mb-4 line-clamp-2">
+                    {program.short}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-primary bg-orange-pale px-2.5 py-1 rounded-sharp">
+                      {program.duration}
+                    </span>
+                    <span className="w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center text-[13px] font-bold transition-colors group-hover:bg-primary-dark">
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </section>;
+    </section>
+  );
 };
