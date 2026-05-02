@@ -19,10 +19,16 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        charcoal: "hsl(var(--charcoal))",
+        cream: "hsl(var(--cream))",
+        "orange-pale": "hsl(var(--orange-pale))",
+        "muted-soft": "hsl(var(--muted-foreground-soft))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
+          dark: "hsl(var(--primary-dark))",
+          light: "hsl(var(--primary-light))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -116,8 +122,12 @@ export default {
         "float": "float 3s ease-in-out infinite",
       },
       fontFamily: {
-        'sans': ['Outfit', 'sans-serif'],
-        'display': ['Sora', 'sans-serif'],
+        'sans': ['Outfit', 'Helvetica Neue', 'sans-serif'],
+        'display': ['"Playfair Display"', 'Georgia', 'serif'],
+        'serif': ['"Playfair Display"', 'Georgia', 'serif'],
+      },
+      borderRadius: {
+        sharp: "2px",
       },
     },
   },
