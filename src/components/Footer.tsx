@@ -36,7 +36,7 @@ export const Footer = () => {
                 className="w-11 h-11 rounded-full object-cover border-2 border-primary"
               />
               <span className="font-display font-bold text-base text-white leading-tight">
-                Don Bosco <span className="text-primary-light">Institute</span>
+                Don Bosco
               </span>
             </div>
             <p className="text-[13px] font-light leading-[1.75] text-white/40 max-w-[270px] mb-6">
