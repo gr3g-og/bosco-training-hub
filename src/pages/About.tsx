@@ -32,7 +32,7 @@ const stats = [{
   label: "Programs Offered"
 }, {
   icon: Briefcase,
-  value: "85%",
+  value: "90%",
   label: "Job Placement Rate"
 }];
 const timeline = [{
