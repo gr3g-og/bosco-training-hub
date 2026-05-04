@@ -74,10 +74,10 @@ export const Navigation = () => {
               </span>
               <span className="hidden sm:flex flex-col leading-none">
                 <span className="font-display font-bold text-[17px] text-white tracking-[0.02em]">
-                  Don Bosco <span className="text-primary-light">Institute</span>
+                  Don Bosco
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.14em] text-white/50 mt-0.5">
-                  Salesian · Ashaiman
+                  TRAINING INSTITUTE
                 </span>
               </span>
             </Link>

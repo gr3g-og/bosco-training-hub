@@ -27,7 +27,7 @@ export const Hero = () => {
           className="inline-flex items-center gap-2.5 bg-primary text-white text-[10px] font-semibold uppercase tracking-[0.14em] px-4 py-[7px] rounded-sharp mb-7"
         >
           <span className="w-1.5 h-1.5 bg-white rounded-full" />
-          Salesian Technical Institute · Ashaiman
+          TRAINING INSTITUTE
         </motion.span>
 
         <motion.h1
