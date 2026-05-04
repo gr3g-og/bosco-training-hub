@@ -5,14 +5,19 @@ import { Programs } from "@/components/Programs";
 import { ContactStrip } from "@/components/ContactStrip";
 import { SEO } from "@/components/SEO";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
+import { breadcrumbLd } from "@/lib/seo";
 
 const ProgramsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
         title="Training Programs"
-        description="Explore 10 vocational training programs at Don Bosco Training Institute: Electrical, Solar, Automotive, IT & Design, Cosmetology, Catering, and more. NVTI-certified courses for career success."
+        description="Explore 10 vocational training programs at Don Bosco Training Institute: Electrical, Solar, Automotive, IT & Design, Cosmetology, Catering, and more."
         path="/programs"
+        jsonLd={breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "Programs", path: "/programs" },
+        ])}
       />
       <Navigation />
 

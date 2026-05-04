@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { programDetails } from "@/data/programDetails";
+import { breadcrumbLd, courseLd } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, BookOpen, Award, Briefcase } from "lucide-react";
@@ -43,6 +44,19 @@ const ProgramDetailPage = () => {
         title={program.name}
         description={program.overview.slice(0, 155)}
         path={`/programs/${slug}`}
+        image={program.image}
+        jsonLd={[
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Programs", path: "/programs" },
+            { name: program.name, path: `/programs/${slug}` },
+          ]),
+          courseLd({
+            name: program.name,
+            description: program.overview,
+            slug: slug!,
+          }),
+        ]}
       />
       <Navigation />
 
