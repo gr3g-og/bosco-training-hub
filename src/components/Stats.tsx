@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 const stats = [
   { num: "25", sfx: "+", label: "Years of Service" },
@@ -6,6 +7,30 @@ const stats = [
   { num: "10", sfx: "", label: "Vocational Programs" },
   { num: "70", sfx: "%", label: "Hands-On Training" },
 ];
+
+const CountUp = ({ value, duration = 1600 }: { value: string; duration?: number }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const target = parseInt(value.replace(/,/g, ""), 10);
+  const useCommas = value.includes(",");
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!inView || isNaN(target)) return;
+    let raf = 0;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setDisplay(Math.round(eased * target));
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, target, duration]);
+
+  return <span ref={ref}>{useCommas ? display.toLocaleString("en-US") : display}</span>;
+};
 
 export const Stats = () => {
   return (
@@ -22,7 +47,7 @@ export const Stats = () => {
           } ${i % 2 === 0 ? "border-r" : ""} ${i < 2 ? "border-b md:border-b-0" : ""}`}
         >
           <span className="block font-display font-bold text-white leading-none text-4xl md:text-[44px]">
-            {stat.num}
+            <CountUp value={stat.num} />
             <span className="text-2xl md:text-[28px] font-normal">{stat.sfx}</span>
           </span>
           <span className="block mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/75">
