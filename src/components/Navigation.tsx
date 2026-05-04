@@ -77,7 +77,7 @@ export const Navigation = () => {
                   Don Bosco
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.14em] text-white/50 mt-0.5">
-                  TRAINING INSTITUTE
+                  Training Institute
                 </span>
               </span>
             </Link>
