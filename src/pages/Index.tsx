@@ -10,14 +10,16 @@ import { Contact } from "@/components/Contact";
 import { ContactStrip } from "@/components/ContactStrip";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
+import { organizationLd, websiteLd } from "@/lib/seo";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Don Bosco Training Institute, Ashaiman - Technical Skills for All"
-        description="Ultra-modern job-oriented skill training at Don Bosco Training Institute, Ashaiman. Equip yourself with practical vocational skills in electrical, automotive, IT, cosmetology, and more."
+        title="Don Bosco Training Institute, Ashaiman — Learn a Trade, Earn a Living"
+        description="Salesian non-profit vocational centre in Ashaiman, Ghana offering job-oriented training in electrical, automotive, IT, cosmetology, catering and more."
         path="/"
+        jsonLd={[organizationLd, websiteLd]}
       />
       <Navigation />
       <main>
